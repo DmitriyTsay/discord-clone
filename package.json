@@ -1,0 +1,39 @@
+{
+  "name": "discord-clone",
+  "version": "1.0.0",
+  "description": "Discord clone for Fntastic Test Task",
+  "main": "main.js",
+  "scripts": {
+    "start": "concurrently \"npm run build\" && \"npm run start:electron\"",
+    "build": "esbuild src/index.js --bundle --outfile=build.js --loader:.js=jsx",
+    "start:electron": "wait-on -v file:/build.js && electron .",
+    "electron": "electron .",
+    "start:react": "react-scripts start"
+  },
+  "author": "Tsay D",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^20.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
+    "react-router-dom": "^6.3.0",
+    "wait-on": "^6.0.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.15.5",
+    "react-scripts": "^5.0.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

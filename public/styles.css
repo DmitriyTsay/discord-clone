@@ -1,0 +1,637 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    user-select: none; 
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    background: #4e6f7b;
+    overflow: hidden;
+}
+
+.app {
+    display: flex;
+}
+
+/* global styles */
+
+.bold {
+    font-weight: bold;
+}
+
+.small {
+    font-size: 12px !important;
+}
+
+.gray {
+    color: rgb(150,150,150);
+}
+
+.red {
+    color: red;
+}
+
+.white {
+    color: rgb(220,220,220);
+}
+
+.divider {
+    border-top: 1px solid gray;
+
+    width: 90%;
+
+    margin-bottom: 10px;
+}
+
+.full-divider {
+    border-top: 1px solid gray;
+
+    width: 100%;
+}
+
+/* -----SIDENAV----- */
+
+.sidenav {
+    display: flex;
+    flex-direction: column;
+
+    height: 100vh;
+
+    padding: 15px 0;
+
+    justify-content: flex-start;
+    align-items: center;
+
+    background: rgb(55,55,55);
+
+    width: 75px;
+}
+
+.sidenav__divider {
+    border-top: 3px solid black;
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+/* -----SIDENAV __ CHANNEL CARDS ----- */
+
+.channel-card {
+    display: flex;
+    flex-direction: row;
+
+    margin-bottom: 10px;
+}
+
+.channel-card__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    cursor: pointer;
+    
+    background: transparent;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+    border: 1px solid black;
+    
+    overflow: hidden;
+
+    transition: border-radius 0.3s;
+}
+
+.channel-card__img:hover {
+    border-radius: 20%;
+}
+
+.channel-card__img img {
+    width: 50px;
+    height: 50px;
+}
+
+/* -----HOME PAGE----- */
+
+.home-page {
+    display: flex;
+    
+    height: 100vh;
+    min-height: 600px;
+}
+
+/* -----HOME PAGE__FIRST SECTION----- */
+
+.home-page__first {
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 10px;
+
+    width: 250px;
+
+    overflow: hidden;
+}
+
+/* -----SEARCH BAR----- */
+
+.search-bar {
+    display: flex;
+    align-items: center;
+
+    width: 250px;
+    height: 50px;
+
+    padding: 10px;
+
+    border: 1px solid green;
+
+    background: rgb(75,75,75);
+}
+
+/* -----MESSAGE SECTION----- */
+
+.message-section {
+    display: flex;
+
+    height: calc(100vh - 50px - 65px);
+
+    padding: 10px;
+
+    background: rgb(75,75,75);
+}
+
+/* -----PROFILE BAR----- */
+
+.profile-bar {
+    display: flex;
+    align-items: center;
+
+    width: 250px;
+
+    padding: 10px;
+
+    height: 65px;
+
+    background: rgb(75,75,75);
+}
+
+/* -----PROFILE BAR__CREDENTIALS----- */
+
+.profile-bar__credentials {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+
+    padding: 5px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    align-items: center;
+}
+
+.profile-bar__credentials:hover {
+    background: rgb(100,100,100);
+}
+
+.profile-bar__credentials p {
+
+    color: rgb(225,225,225);
+    
+    font-size: 12px;
+}
+
+.credentials__id {
+    margin-top: -5px;
+}
+
+.profile-bar__credentials__image {
+    width: 40px; 
+    height: 40px;
+
+    overflow: hidden;
+
+    grid-row: 1/3;
+
+    margin-right: 10px;
+}
+
+.profile-bar__credentials__image img {
+    width: 40px;
+    height: 40px;
+}
+
+/* -----HOME PAGE__SECOND SECTION----- */
+
+.home-page__second {
+    width: calc(100vw - 75px - 250px);
+
+    background-color: rgb(125,125,125);
+    border: 1px solid red;
+}
+
+/* -----CHANNEL PAGE----- */
+
+.channel-page {
+    display: flex;
+    
+    height: 100vh;
+    min-height: 600px;
+}
+
+/* -----CHANNEL PAGE__FIRST SECTION----- */
+
+.channel-page__first {
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 5px;
+    border: 1px solid rgb(150,150,150);
+
+    width: 250px;
+
+    overflow: hidden;
+}
+
+/* -----CHANNEL SHORTCUT----- */
+
+.channel-shortcut {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.channel-shortcut__header {
+    display: flex;
+    align-items: center;
+
+    padding: 0 10px;
+
+    width: 250px;
+    height: 35px;
+
+    background: rgb(75,75,75);
+
+    cursor: pointer;
+    
+    font-size: 0.9em;
+    color: rgb(225,225,225);
+}
+
+.channel-shortcut__header:hover {
+    background: rgb(100,100,100);
+}
+
+.channel-shortcut__header__icon {
+    margin-left: auto;
+
+    width: 15px;
+    height: 15px;
+}
+
+.channel-shortcut__header__icon svg {
+    width: 15px;
+    height: 15px;
+}
+
+.channel-shortcut__modal {
+    position: absolute;
+    top: 40px;
+
+    width: 240px;
+
+    padding: 10px 0 10px 15px;
+
+    background: rgb(55,55,55);
+
+    border-radius: 15px;
+
+    font-size: 0.8em;   
+}
+
+.channel-shortcut__modal > p {
+    margin: 5px 0;
+}
+
+.channel-shortcut__modal > p:hover {
+    color: white;
+    cursor: pointer;
+}
+
+/* -----CHANNEL NAV----- */
+.channel-nav {
+    height: calc(100vh - 35px - 65px);
+
+    padding: 15px 10px 0;
+
+    background: rgb(100,100,100);
+}
+
+
+/* -----CHANNEL PAGE__SECOND SECTION----- */
+
+.channel-page__second {
+    width: calc(100vw - 75px - 250px - 250px);
+
+    background-color: rgb(75,75,75);
+
+    border-radius: 5px;
+    border: 1px solid rgb(150,150,150);
+
+    overflow: hidden;
+}
+
+
+.channel-chat__header {
+    /* border: 1px solid yellow; */
+    display: flex;
+    align-items: center;
+
+    background: rgb(75,75,75);
+    border-bottom: 1px solid rgb(150,150,150);
+    
+    height: 36px;
+
+    color: rgb(225,225,225);
+
+    font-size: 0.8em;
+
+    padding: 0 15px;
+}
+
+.channel-chat__main {
+    height: calc(100vh - 36px - 50px);
+
+    overflow: auto;
+
+    transition: all 0.5s;
+
+    padding: 15px;
+}
+
+/* -----MESSAGES (CHAT)----- */
+
+.message {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+
+    column-gap: 15px;
+
+    justify-content: start;
+
+    border-radius: 10px;
+
+    padding: 15px 15px;
+}
+
+.message:hover {
+    background: rgb(100,100,100);
+}
+
+.message > img {
+    height: 40px;
+    width: 40px;
+
+    border-radius: 50%;
+
+    grid-row: 1/3;
+}
+
+.message__main {
+    font-size: 0.9em;
+    word-break: break-word;
+    overflow-wrap: break-word;
+
+    width: 100%;
+}
+
+.channel-chat__input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    height: 50px;
+}
+
+.channel-chat__input form {
+    position: absolute;
+
+    bottom: 10px;
+
+    width: calc(100% - 40px); 
+    height: 30px; 
+}
+
+.channel-chat__input textarea {
+    padding: 6px 30px 5px 33px;
+
+    width: 100%; 
+    height: 30px; 
+
+    border-radius: 5px;
+    border: none;
+    
+    display: flex;
+
+    resize: none;
+}
+
+.channel-chat__input__add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+
+    padding: 3px;
+
+    left: 10px;
+    top: 3px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    z-index: 1;
+}
+
+.channel-chat__input__add:hover {
+    background: rgb(220,220,220);
+}
+
+.channel-chat__input__emoji {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+
+    padding: 3px;
+
+    right: 10px;
+    top: 3px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    z-index: 1;
+    
+    transition: all 1s;
+}
+
+.channel-chat__input__emoji:hover {
+    background: rgb(220,220,220);
+}
+
+@media screen and (max-width: 1000px) {
+    .channel-chat__input__emoji {
+        transition: all 10s;
+    }
+
+    .channel-page__third {
+        z-index: 2;
+    }
+}
+
+/* -----CHANNEL PAGE__THIRD SECTION----- */
+
+.channel-page__third {
+    display: flex;
+    flex-direction: column;
+
+    width: 250px;
+
+    border-radius: 5px;
+    border: 1px solid rgb(150,150,150);
+
+    overflow: hidden;
+}
+
+/* -----USERS SECTION------ */
+
+.users-section {
+    display: flex;
+    flex-direction: column;
+    
+    background: rgb(75,75,75);
+
+    height: 100vh;
+
+    overflow: auto;
+}
+
+/* Doesn't work for IE, firefox, but with Electron will be fine IMO */
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+.users-section__category {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    margin-top: 15px;
+}
+
+.users-section__category > p {
+    margin-bottom: 5px;
+    margin-left: 15px;
+}
+
+/* -----USER BAR----- */
+
+.user-bar {
+    display: flex;
+    align-items: center;
+
+    width: 220px;
+    
+    margin: 0 auto;
+    padding: 10px;
+
+    height: 50px;
+
+    border-radius: 10px;
+
+    background: rgb(75,75,75);
+}
+
+@media screen and (max-width: 1000px) {
+    
+    .users-section__category > p {
+        margin-left: 10px;
+    }
+
+    .channel-page__second {
+        width: calc(100vw - 75px - 250px - 55px);
+    }
+
+    .channel-page__third {
+        width: 55px;
+
+        position: absolute;
+
+        right: 0;
+
+        transition: width 0.5s;
+    }
+
+    .channel-page__third:hover {
+        width: 250px;
+    }
+}
+
+.user-bar:hover {
+    background: rgb(100,100,100);
+}
+
+/* -----USER BAR__CREDENTIALS----- */
+
+.user-bar__credentials {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    align-items: center;
+}
+
+.user-bar__credentials p {
+    font-size: 14px;
+}
+
+.user-bar__credentials__image {
+    width: 40px; 
+    height: 40px;
+
+    grid-row: 1/3;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    margin-right: 10px;
+}
+
+.user-bar__credentials__image img {
+    width: 40px;
+    height: 40px;
+}
+
+.status {
+    margin-top: -5px !important;
+}
