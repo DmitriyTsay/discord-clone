@@ -15,7 +15,7 @@ const UsersSection = () => {
         {
             name: 'Bill Gates',
             image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmy4xLx6IpXyhloRDttTWPp8k_0ULF3uZMFoIpLsQBQg&s',
-            online: false,
+            online: true,
             status: 'Working'
         },
         {

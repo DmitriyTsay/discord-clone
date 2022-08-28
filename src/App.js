@@ -1,9 +1,6 @@
 import React from 'react';
 import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom'
 
-// DummyData
-import {data} from './dummydata';
-
 // Components
 import SideNav from './components/SideNav';
 

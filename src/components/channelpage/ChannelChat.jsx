@@ -9,7 +9,7 @@ import { ImInfo } from 'react-icons/im'
 const ChannelChat = ({channel1}) => {
 
     const channel = {
-        name: 'GamesChannel',
+        name: 'Games',
         users: [
             {
                 name: 'Tsay Dmitriy',
@@ -20,7 +20,7 @@ const ChannelChat = ({channel1}) => {
             {
                 name: 'Bill Gates',
                 image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmy4xLx6IpXyhloRDttTWPp8k_0ULF3uZMFoIpLsQBQg&s',
-                online: false,
+                online: true,
                 status: 'Working'
             },
             {
@@ -93,7 +93,6 @@ const ChannelChat = ({channel1}) => {
         for (let i = 0; i < channel.users.length; i++) {
             if (channel.users[i].name === userName) {
                 return channel.users[i].image;
-                break;
             }
         }
     }
@@ -164,6 +163,12 @@ const ChannelChat = ({channel1}) => {
             <span># Welcome</span>
             <p className='gray users-amount'><BiUserPin />{channel.users.length}</p>
             <p className='gray pin-amount'><BiPin />0</p>
+            <div className='channel-chat__header__modal'>
+                <p>Description of chat</p>
+            </div>
+            <div className='pin-amount__modal'>
+                <p>Pinned messages</p>
+            </div>
         </div>
         <div className='channel-chat__main' ref={chatMainRef}>
             {chat.map((message) => {

@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Icons
-import {AiOutlineArrowDown, AiOutlineClose} from 'react-icons/ai';
+import {AiOutlineArrowDown, AiOutlineClose, AiFillBulb} from 'react-icons/ai';
 import { ImExit, } from 'react-icons/im';
 import { HiUserAdd } from 'react-icons/hi';
 import { MdPrivacyTip } from 'react-icons/md';
@@ -15,7 +15,7 @@ const ChannelShortcut = ({channel1}) => {
     }
 
     const channel = {
-        name: 'GamesChannel',
+        name: 'Games',
         users: [
             {
                 name: 'Tsay Dmitriy',
@@ -57,6 +57,8 @@ const ChannelShortcut = ({channel1}) => {
             </div>
         </div>
         <div className={`channel-shortcut__modal ${isModalOpen ? 'show' : null}`}>
+            <p>About Channel <AiFillBulb /></p>
+            <div className='divider'></div>
             <p>Privacy settings <MdPrivacyTip /></p>
             <div className='divider'></div>
             <p>Invite friends <HiUserAdd /></p>

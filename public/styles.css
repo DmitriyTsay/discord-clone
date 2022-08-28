@@ -130,7 +130,7 @@ body {
 
     background: #c1ccd7;
 
-    padding: 18px;
+    padding: 20px;
 
     border-radius: 5px;
 
@@ -241,7 +241,7 @@ body {
     grid-template-columns: auto auto;
     grid-template-rows: auto auto;
 
-    padding: 5px 12px;
+    padding: 5px 10px;
 
     border-radius: 5px;
 
@@ -622,6 +622,39 @@ body {
     cursor: pointer;
 }
 
+.channel-chat__header__modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 40px;
+    left: 10px;
+
+    height: 0;
+    width: 450px;
+
+    background: #040d2a;
+    
+    padding: 0;
+
+    border-radius: 15px;
+    
+    overflow: hidden;
+
+    transition: all 0.5s;
+}
+
+.channel-chat__header .info:hover ~ .channel-chat__header__modal {
+    padding: 20px;
+    height: 150px;
+}
+
+.channel-chat__header__modal:hover {
+    padding: 20px;
+    height: 150px;
+}
+
 .channel-chat__header .users-amount {
     display: flex;
     justify-content: center;
@@ -654,6 +687,43 @@ body {
     width: 15px;
 
     margin-right: 2px;
+}
+
+.pin-amount__modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 40px;
+    right: 10px;
+
+    height: 0;
+    width: 450px;
+
+    background: #040d2a;
+    
+    padding: 0;
+
+    border-radius: 15px;
+    
+    overflow: hidden;
+
+    transition: all 0.5s;
+}
+
+.channel-chat__header .pin-amount:hover {
+    color: white;
+}
+
+.channel-chat__header .pin-amount:hover ~ .pin-amount__modal {
+    padding: 20px;
+    height: 150px;
+}
+
+.pin-amount__modal:hover {
+    padding: 20px;
+    height: 150px;
 }
 
 .channel-chat__main {

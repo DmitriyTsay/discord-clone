@@ -5,7 +5,6 @@ import ChannelCard from './ChannelCard';
 
 // Icons
 import { FiSettings } from 'react-icons/fi';
-import { IoAddOutline } from 'react-icons/io';
 
 const SideNav = () => {
 

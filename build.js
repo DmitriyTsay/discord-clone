@@ -23881,202 +23881,17 @@
     }, [location, navigate, path, replaceProp, state, target, to]);
   }
 
-  // src/dummydata.js
-  var data = {
-    channels: {
-      "GamesDepartment": {
-        img: "https://www.pngall.com/wp-content/uploads/12/Gaming-PNG-Images-HD.png"
-      },
-      "VideoDepartment": {
-        img: "https://www.pngall.com/wp-content/uploads/12/Gaming-PNG-Images-HD.png"
-      },
-      "LawDepartment": {
-        img: "https://www.pngall.com/wp-content/uploads/12/Gaming-PNG-Images-HD.png"
-      }
-    }
-  };
-
   // src/components/SideNav.jsx
-  var import_react4 = __toESM(require_react());
+  var import_react6 = __toESM(require_react());
 
   // src/components/ChannelCard.jsx
-  var import_react3 = __toESM(require_react());
-  var ChannelCard = ({ img, name, page }) => {
-    const navigate = useNavigate();
-    return /* @__PURE__ */ import_react3.default.createElement("div", {
-      className: "channel-card"
-    }, /* @__PURE__ */ import_react3.default.createElement("div", {
-      className: "channel-card__img"
-    }, /* @__PURE__ */ import_react3.default.createElement("img", {
-      src: img,
-      alt: "channel",
-      onClick: () => navigate(page)
-    })));
-  };
-  var ChannelCard_default = ChannelCard;
-
-  // src/components/SideNav.jsx
-  var SideNav = () => {
-    return /* @__PURE__ */ import_react4.default.createElement("nav", {
-      className: "sidenav"
-    }, /* @__PURE__ */ import_react4.default.createElement(ChannelCard_default, {
-      img: "https://media-exp1.licdn.com/dms/image/C4D0BAQH6SWrsil3_Xw/company-logo_200_200/0/1638984902150?e=1669852800&v=beta&t=UE9HGoRib_ybtcEPI7rTnt7ILqhH75sS45NktKvTETw",
-      name: "HomePage",
-      page: "/"
-    }), /* @__PURE__ */ import_react4.default.createElement("div", {
-      class: "sidenav__divider"
-    }), Object.values(data.channels).map((channel) => {
-      return /* @__PURE__ */ import_react4.default.createElement(ChannelCard_default, {
-        img: channel.img ? channel.img : "./images/noimage.png",
-        name: JSON.stringify(channel),
-        key: JSON.stringify(channel),
-        page: "/channel"
-      });
-    }), /* @__PURE__ */ import_react4.default.createElement(ChannelCard_default, {
-      img: "https://cdn-icons-png.flaticon.com/512/117/117885.png"
-    }));
-  };
-  var SideNav_default = SideNav;
-
-  // src/pages/HomePage.jsx
-  var import_react8 = __toESM(require_react());
-
-  // src/components/homepage/SearchBar.jsx
   var import_react5 = __toESM(require_react());
-  var SearchBar = () => {
-    return /* @__PURE__ */ import_react5.default.createElement("div", {
-      className: "search-bar"
-    }, "SearchBar");
-  };
-  var SearchBar_default = SearchBar;
-
-  // src/components/homepage/MessageSection.jsx
-  var import_react6 = __toESM(require_react());
-  var MessageSection = () => {
-    return /* @__PURE__ */ import_react6.default.createElement("div", {
-      className: "message-section"
-    }, "MessageSection");
-  };
-  var MessageSection_default = MessageSection;
-
-  // src/components/ProfileBar.jsx
-  var import_react7 = __toESM(require_react());
-  var ProfileBar = () => {
-    return /* @__PURE__ */ import_react7.default.createElement("div", {
-      className: "profile-bar"
-    }, /* @__PURE__ */ import_react7.default.createElement("div", {
-      className: "profile-bar__credentials"
-    }, /* @__PURE__ */ import_react7.default.createElement("div", {
-      className: "profile-bar__credentials__image"
-    }, /* @__PURE__ */ import_react7.default.createElement("img", {
-      src: "/images/noimage.png",
-      alt: "profile"
-    })), /* @__PURE__ */ import_react7.default.createElement("p", {
-      className: "bold"
-    }, "Tsay Dmitriy"), /* @__PURE__ */ import_react7.default.createElement("p", {
-      className: "credentials__id"
-    }, "#1356")));
-  };
-  var ProfileBar_default = ProfileBar;
-
-  // src/pages/HomePage.jsx
-  var HomePage = () => {
-    return /* @__PURE__ */ import_react8.default.createElement("div", {
-      className: "home-page"
-    }, /* @__PURE__ */ import_react8.default.createElement("div", {
-      className: "home-page__first"
-    }, /* @__PURE__ */ import_react8.default.createElement(SearchBar_default, null), /* @__PURE__ */ import_react8.default.createElement(MessageSection_default, null), /* @__PURE__ */ import_react8.default.createElement(ProfileBar_default, null)), /* @__PURE__ */ import_react8.default.createElement("div", {
-      className: "home-page__second"
-    }, "Second section"));
-  };
-  var HomePage_default = HomePage;
-
-  // src/pages/ChannelPage.jsx
-  var import_react16 = __toESM(require_react());
-
-  // src/components/channelpage/UsersSection.jsx
-  var import_react10 = __toESM(require_react());
-
-  // src/components/UserBar.jsx
-  var import_react9 = __toESM(require_react());
-  var UserBar = ({ name, image, online, status }) => {
-    return /* @__PURE__ */ import_react9.default.createElement("div", {
-      className: "user-bar"
-    }, /* @__PURE__ */ import_react9.default.createElement("div", {
-      className: "user-bar__credentials"
-    }, /* @__PURE__ */ import_react9.default.createElement("div", {
-      className: "user-bar__credentials__image"
-    }, /* @__PURE__ */ import_react9.default.createElement("img", {
-      src: image,
-      alt: "user"
-    })), /* @__PURE__ */ import_react9.default.createElement("p", {
-      className: "gray"
-    }, name), /* @__PURE__ */ import_react9.default.createElement("p", {
-      className: "status small gray bold"
-    }, status)));
-  };
-  var UserBar_default = UserBar;
-
-  // src/components/channelpage/UsersSection.jsx
-  var UsersSection = () => {
-    const users = [
-      {
-        name: "Tsay Dmitriy",
-        image: "https://thumbs.dreamstime.com/b/cute-cat-portrait-square-photo-beautiful-white-closeup-105311158.jpg",
-        online: true,
-        status: "Working"
-      },
-      {
-        name: "Bill Gates",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmy4xLx6IpXyhloRDttTWPp8k_0ULF3uZMFoIpLsQBQg&s",
-        online: false,
-        status: "Working"
-      },
-      {
-        name: "Elon Musk",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s",
-        online: false,
-        status: "Chilling"
-      }
-    ];
-    return /* @__PURE__ */ import_react10.default.createElement("div", {
-      className: "users-section"
-    }, /* @__PURE__ */ import_react10.default.createElement("div", {
-      className: "users-section__category"
-    }, /* @__PURE__ */ import_react10.default.createElement("p", {
-      className: "small gray bold"
-    }, "Online"), users.map((user) => {
-      if (user.online) {
-        return /* @__PURE__ */ import_react10.default.createElement(UserBar_default, {
-          name: user.name,
-          image: user.image,
-          status: user.status
-        });
-      }
-    })), /* @__PURE__ */ import_react10.default.createElement("div", {
-      className: "users-section__category"
-    }, /* @__PURE__ */ import_react10.default.createElement("p", {
-      className: "small gray bold"
-    }, "Offline"), users.map((user) => {
-      if (!user.online) {
-        return /* @__PURE__ */ import_react10.default.createElement(UserBar_default, {
-          name: user.name,
-          image: user.image,
-          status: user.status
-        });
-      }
-    })));
-  };
-  var UsersSection_default = UsersSection;
-
-  // src/components/channelpage/ChannelShortcut.jsx
-  var import_react13 = __toESM(require_react());
 
   // node_modules/react-icons/lib/esm/iconBase.js
-  var import_react12 = __toESM(require_react());
+  var import_react4 = __toESM(require_react());
 
   // node_modules/react-icons/lib/esm/iconContext.js
-  var import_react11 = __toESM(require_react());
+  var import_react3 = __toESM(require_react());
   var DefaultContext = {
     color: void 0,
     size: void 0,
@@ -24084,7 +23899,7 @@
     style: void 0,
     attr: void 0
   };
-  var IconContext = import_react11.default.createContext && import_react11.default.createContext(DefaultContext);
+  var IconContext = import_react3.default.createContext && import_react3.default.createContext(DefaultContext);
 
   // node_modules/react-icons/lib/esm/iconBase.js
   var __assign = function() {
@@ -24113,14 +23928,14 @@
   };
   function Tree2Element(tree) {
     return tree && tree.map(function(node, i) {
-      return import_react12.default.createElement(node.tag, __assign({
+      return import_react4.default.createElement(node.tag, __assign({
         key: i
       }, node.attr), Tree2Element(node.child));
     });
   }
   function GenIcon(data2) {
     return function(props) {
-      return import_react12.default.createElement(IconBase, __assign({
+      return import_react4.default.createElement(IconBase, __assign({
         attr: __assign({}, data2.attr)
       }, props), Tree2Element(data2.child));
     };
@@ -24134,7 +23949,7 @@
         className = conf.className;
       if (props.className)
         className = (className ? className + " " : "") + props.className;
-      return import_react12.default.createElement("svg", __assign({
+      return import_react4.default.createElement("svg", __assign({
         stroke: "currentColor",
         fill: "currentColor",
         strokeWidth: "0"
@@ -24146,12 +23961,362 @@
         height: computedSize,
         width: computedSize,
         xmlns: "http://www.w3.org/2000/svg"
-      }), title && import_react12.default.createElement("title", null, title), props.children);
+      }), title && import_react4.default.createElement("title", null, title), props.children);
     };
-    return IconContext !== void 0 ? import_react12.default.createElement(IconContext.Consumer, null, function(conf) {
+    return IconContext !== void 0 ? import_react4.default.createElement(IconContext.Consumer, null, function(conf) {
       return elem(conf);
     }) : elem(DefaultContext);
   }
+
+  // node_modules/react-icons/gr/index.esm.js
+  function GrAdd(props) {
+    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "fill": "none", "stroke": "#000", "strokeWidth": "2", "d": "M12,22 L12,2 M2,12 L22,12" } }] })(props);
+  }
+
+  // src/components/ChannelCard.jsx
+  var ChannelCard = ({ img, name, page, handleClick, selected }) => {
+    const [isMouseOn, setIsMouseOn] = import_react5.default.useState(false);
+    const navigate = useNavigate();
+    const showModal = () => {
+      setIsMouseOn(true);
+    };
+    const closeModal = () => {
+      setIsMouseOn(false);
+    };
+    return /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "channel-card",
+      onClick: handleClick
+    }, /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: `channel-card__img ${selected && "selected"}`
+    }, img ? /* @__PURE__ */ import_react5.default.createElement("img", {
+      src: img,
+      alt: "channel",
+      onClick: () => navigate(page),
+      onMouseEnter: showModal,
+      onMouseLeave: closeModal
+    }) : /* @__PURE__ */ import_react5.default.createElement(GrAdd, null), isMouseOn && /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "channel-card__modal"
+    }, /* @__PURE__ */ import_react5.default.createElement("p", {
+      className: "w600"
+    }, name))), page === "/" && /* @__PURE__ */ import_react5.default.createElement("div", {
+      class: "sidenav__divider"
+    }));
+  };
+  var ChannelCard_default = ChannelCard;
+
+  // node_modules/react-icons/fi/index.esm.js
+  function FiSettings(props) {
+    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 24 24", "fill": "none", "stroke": "currentColor", "strokeWidth": "2", "strokeLinecap": "round", "strokeLinejoin": "round" }, "child": [{ "tag": "circle", "attr": { "cx": "12", "cy": "12", "r": "3" } }, { "tag": "path", "attr": { "d": "M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" } }] })(props);
+  }
+
+  // src/components/SideNav.jsx
+  var SideNav = () => {
+    const data2 = {
+      channels: [
+        {
+          channelName: "Homepage",
+          image: "https://media-exp1.licdn.com/dms/image/C4D0BAQH6SWrsil3_Xw/company-logo_200_200/0/1638984902150?e=1669852800&v=beta&t=UE9HGoRib_ybtcEPI7rTnt7ILqhH75sS45NktKvTETw"
+        },
+        {
+          channelName: "Games",
+          image: "https://www.icivics.org/sites/default/files/2021Product_game.png"
+        },
+        {
+          channelName: "Video",
+          image: "https://png.pngtree.com/element_our/20190528/ourlarge/pngtree-video-icon-image_1128393.jpg"
+        },
+        {
+          channelName: "Cats",
+          image: "https://i.pinimg.com/736x/08/f0/ec/08f0ec9f38f376d384d9ddafd3e574d2.jpg"
+        }
+      ]
+    };
+    const [selectedChannel, setSelectedChannel] = import_react6.default.useState("");
+    const selectChannel = (channelName) => {
+      setSelectedChannel(channelName);
+    };
+    return /* @__PURE__ */ import_react6.default.createElement("nav", {
+      className: "sidenav"
+    }, data2.channels.map((channel) => {
+      return /* @__PURE__ */ import_react6.default.createElement(ChannelCard_default, {
+        page: channel.channelName === "Homepage" ? "/" : "/channel",
+        img: channel.image,
+        key: channel.channelName,
+        name: channel.channelName,
+        handleClick: () => selectChannel(channel.channelName),
+        selected: selectedChannel === channel.channelName ? true : false
+      });
+    }), /* @__PURE__ */ import_react6.default.createElement(ChannelCard_default, {
+      name: "Add channel"
+    }), /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "sidenav__settings"
+    }, /* @__PURE__ */ import_react6.default.createElement(FiSettings, null)));
+  };
+  var SideNav_default = SideNav;
+
+  // src/pages/HomePage.jsx
+  var import_react10 = __toESM(require_react());
+
+  // src/components/homepage/SearchBar.jsx
+  var import_react7 = __toESM(require_react());
+  var SearchBar = () => {
+    return /* @__PURE__ */ import_react7.default.createElement("div", {
+      className: "search-bar"
+    }, "SearchBar");
+  };
+  var SearchBar_default = SearchBar;
+
+  // src/components/homepage/MessageSection.jsx
+  var import_react8 = __toESM(require_react());
+  var MessageSection = () => {
+    return /* @__PURE__ */ import_react8.default.createElement("div", {
+      className: "message-section"
+    }, "MessageSection");
+  };
+  var MessageSection_default = MessageSection;
+
+  // src/components/ProfileBar.jsx
+  var import_react9 = __toESM(require_react());
+
+  // node_modules/react-icons/md/index.esm.js
+  function MdPrivacyTip(props) {
+    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "fill": "none", "d": "M0 0h24v24H0z" } }, { "tag": "path", "attr": { "d": "M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 6h2v2h-2V7zm0 4h2v6h-2v-6z" } }] })(props);
+  }
+  function MdAddReaction(props) {
+    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "fill": "none", "d": "M0 0h24v24H0z" } }, { "tag": "path", "attr": { "d": "M18 9V7h-2V2.84A9.929 9.929 0 0011.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12c0-1.05-.17-2.05-.47-3H18zm-2.5-1c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zm-7 0c.83 0 1.5.67 1.5 1.5S9.33 11 8.5 11 7 10.33 7 9.5 7.67 8 8.5 8zm3.5 9.5c-2.33 0-4.31-1.46-5.11-3.5h10.22c-.8 2.04-2.78 3.5-5.11 3.5zM22 3h2v2h-2v2h-2V5h-2V3h2V1h2v2z" } }] })(props);
+  }
+  function MdOutlineMicNone(props) {
+    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "fill": "none", "d": "M0 0h24v24H0V0z" } }, { "tag": "path", "attr": { "d": "M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm-1-9c0-.55.45-1 1-1s1 .45 1 1v6c0 .55-.45 1-1 1s-1-.45-1-1V5zm6 6c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z" } }] })(props);
+  }
+  function MdOutlineMicOff(props) {
+    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "fill": "none", "d": "M0 0h24v24H0V0z" } }, { "tag": "path", "attr": { "d": "M10.8 4.9c0-.66.54-1.2 1.2-1.2s1.2.54 1.2 1.2l-.01 3.91L15 10.6V5c0-1.66-1.34-3-3-3-1.54 0-2.79 1.16-2.96 2.65l1.76 1.76V4.9zM19 11h-1.7c0 .58-.1 1.13-.27 1.64l1.27 1.27c.44-.88.7-1.87.7-2.91zM4.41 2.86L3 4.27l6 6V11c0 1.66 1.34 3 3 3 .23 0 .44-.03.65-.08l1.66 1.66c-.71.33-1.5.52-2.31.52-2.76 0-5.3-2.1-5.3-5.1H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28a7.13 7.13 0 002.55-.9l4.2 4.2 1.41-1.41L4.41 2.86z" } }] })(props);
+  }
+  function MdOutlineHeadsetMic(props) {
+    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "fill": "none", "d": "M0 0h24v24H0V0z" } }, { "tag": "path", "attr": { "d": "M19 14v4h-2v-4h2M7 14v4H6c-.55 0-1-.45-1-1v-3h2m5-13a9 9 0 00-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h4v1h-7v2h6c1.66 0 3-1.34 3-3V10a9 9 0 00-9-9z" } }] })(props);
+  }
+  function MdOutlineHeadsetOff(props) {
+    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "fill": "none", "d": "M0 0h24v24H0z" } }, { "tag": "path", "attr": { "d": "M12 4c3.87 0 7 3.13 7 7v1h-4v.17L16.83 14H19v2.17l2 2V11a9 9 0 00-9-9c-2.02 0-3.88.67-5.38 1.8l1.43 1.43A6.878 6.878 0 0112 4zM2.1 2.1L.69 3.51l3.33 3.33A8.98 8.98 0 003 11v7c0 1.1.9 2 2 2h4v-8H5v-1c0-.94.19-1.83.52-2.65L15 17.83V20h2.17l1 1H12v2h7c.34 0 .65-.09.93-.24l.55.55 1.41-1.41L2.1 2.1zM7 14v4H5v-4h2z" } }] })(props);
+  }
+
+  // src/components/ProfileBar.jsx
+  var ProfileBar = () => {
+    const [isMicOn, setIsMicOn] = import_react9.default.useState(true);
+    const [isHeadSetOn, setIsHeadSetOn] = import_react9.default.useState(true);
+    const activeUser = {
+      name: "Tsay Dmitriy",
+      image: "https://thumbs.dreamstime.com/b/cute-cat-portrait-square-photo-beautiful-white-closeup-105311158.jpg"
+    };
+    const toggleMic = () => {
+      if (isMicOn && !isHeadSetOn) {
+        return;
+      } else if (!isMicOn && !isHeadSetOn) {
+        return;
+      }
+      setIsMicOn((prevIsMicOn) => !prevIsMicOn);
+    };
+    const toggleHeadset = () => {
+      if (isMicOn && isHeadSetOn) {
+        setIsHeadSetOn(false);
+        setIsMicOn(false);
+      } else if (!isMicOn && !isHeadSetOn) {
+        setIsHeadSetOn(true);
+        setIsMicOn(true);
+      } else if (!isMicOn && isHeadSetOn) {
+        setIsHeadSetOn(false);
+      }
+    };
+    return /* @__PURE__ */ import_react9.default.createElement("div", {
+      className: "profile-bar"
+    }, /* @__PURE__ */ import_react9.default.createElement("div", {
+      className: "profile-bar__credentials"
+    }, /* @__PURE__ */ import_react9.default.createElement("div", {
+      className: "profile-bar__credentials__image"
+    }, /* @__PURE__ */ import_react9.default.createElement("img", {
+      src: activeUser.image,
+      alt: "profile"
+    })), /* @__PURE__ */ import_react9.default.createElement("p", {
+      className: "bold"
+    }, activeUser.name), /* @__PURE__ */ import_react9.default.createElement("p", {
+      className: "credentials__id"
+    }, "#1356")), /* @__PURE__ */ import_react9.default.createElement("div", {
+      className: "profile-bar__mic",
+      onClick: toggleMic
+    }, isMicOn ? /* @__PURE__ */ import_react9.default.createElement(MdOutlineMicNone, null) : /* @__PURE__ */ import_react9.default.createElement(MdOutlineMicOff, null)), /* @__PURE__ */ import_react9.default.createElement("div", {
+      className: "profile-bar__headset",
+      onClick: toggleHeadset
+    }, isHeadSetOn ? /* @__PURE__ */ import_react9.default.createElement(MdOutlineHeadsetMic, null) : /* @__PURE__ */ import_react9.default.createElement(MdOutlineHeadsetOff, null)));
+  };
+  var ProfileBar_default = ProfileBar;
+
+  // src/pages/HomePage.jsx
+  var HomePage = () => {
+    return /* @__PURE__ */ import_react10.default.createElement("div", {
+      className: "home-page"
+    }, /* @__PURE__ */ import_react10.default.createElement("div", {
+      className: "home-page__first"
+    }, /* @__PURE__ */ import_react10.default.createElement(SearchBar_default, null), /* @__PURE__ */ import_react10.default.createElement(MessageSection_default, null), /* @__PURE__ */ import_react10.default.createElement(ProfileBar_default, null)), /* @__PURE__ */ import_react10.default.createElement("div", {
+      className: "home-page__second"
+    }, "Second section"));
+  };
+  var HomePage_default = HomePage;
+
+  // src/pages/ChannelPage.jsx
+  var import_react16 = __toESM(require_react());
+
+  // src/components/channelpage/UsersSection.jsx
+  var import_react12 = __toESM(require_react());
+
+  // src/components/UserBar.jsx
+  var import_react11 = __toESM(require_react());
+  var UserBar = ({ name, image, online, status }) => {
+    return /* @__PURE__ */ import_react11.default.createElement("div", {
+      className: "user-bar"
+    }, /* @__PURE__ */ import_react11.default.createElement("div", {
+      className: "user-bar__credentials"
+    }, /* @__PURE__ */ import_react11.default.createElement("div", {
+      className: "user-bar__credentials__image"
+    }, /* @__PURE__ */ import_react11.default.createElement("img", {
+      src: image,
+      alt: "user"
+    })), /* @__PURE__ */ import_react11.default.createElement("p", null, name), /* @__PURE__ */ import_react11.default.createElement("p", {
+      className: "status small bold"
+    }, status)));
+  };
+  var UserBar_default = UserBar;
+
+  // src/components/channelpage/UsersSection.jsx
+  var UsersSection = () => {
+    const [findInput, setFindInput] = import_react12.default.useState("");
+    const users = [
+      {
+        name: "Tsay Dmitriy",
+        image: "https://thumbs.dreamstime.com/b/cute-cat-portrait-square-photo-beautiful-white-closeup-105311158.jpg",
+        online: true,
+        status: "Working"
+      },
+      {
+        name: "Bill Gates",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmy4xLx6IpXyhloRDttTWPp8k_0ULF3uZMFoIpLsQBQg&s",
+        online: false,
+        status: "Working"
+      },
+      {
+        name: "Elon Musk",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s",
+        online: false,
+        status: "Chilling"
+      },
+      {
+        name: "Elon Musk",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s",
+        online: false,
+        status: "Chilling"
+      },
+      {
+        name: "Elon Musk",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s",
+        online: false,
+        status: "Chilling"
+      },
+      {
+        name: "Elon Musk",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s",
+        online: false,
+        status: "Chilling"
+      },
+      {
+        name: "Elon Musk",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s",
+        online: false,
+        status: "Chilling"
+      },
+      {
+        name: "Elon Musk",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s",
+        online: false,
+        status: "Chilling"
+      },
+      {
+        name: "Elon Musk",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s",
+        online: false,
+        status: "Chilling"
+      },
+      {
+        name: "Elon Musk",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s",
+        online: false,
+        status: "Chilling"
+      },
+      {
+        name: "Elon Musk",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s",
+        online: false,
+        status: "Chilling"
+      },
+      {
+        name: "Elon Musk",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s",
+        online: false,
+        status: "Chilling"
+      },
+      {
+        name: "Elon Musk",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s",
+        online: false,
+        status: "Chilling"
+      },
+      {
+        name: "Elon Musk",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s",
+        online: false,
+        status: "Chilling"
+      }
+    ];
+    const findUser = (event) => {
+      setFindInput(event.target.value);
+    };
+    return /* @__PURE__ */ import_react12.default.createElement("div", {
+      className: "users-section"
+    }, /* @__PURE__ */ import_react12.default.createElement("div", {
+      className: "users-section__scroll"
+    }, /* @__PURE__ */ import_react12.default.createElement("div", {
+      className: "users-section__header"
+    }, /* @__PURE__ */ import_react12.default.createElement("input", {
+      type: "text",
+      value: findInput,
+      onChange: (e) => findUser(e),
+      placeholder: "Find user"
+    }))), /* @__PURE__ */ import_react12.default.createElement("div", {
+      className: "users-section__category"
+    }, /* @__PURE__ */ import_react12.default.createElement("p", {
+      className: "small gray bold"
+    }, "Online"), users.map((user) => {
+      if (user.online) {
+        return /* @__PURE__ */ import_react12.default.createElement(UserBar_default, {
+          name: user.name,
+          image: user.image,
+          status: user.status
+        });
+      }
+    })), /* @__PURE__ */ import_react12.default.createElement("div", {
+      className: "users-section__category"
+    }, /* @__PURE__ */ import_react12.default.createElement("p", {
+      className: "small gray bold"
+    }, "Offline"), users.map((user) => {
+      if (!user.online) {
+        return /* @__PURE__ */ import_react12.default.createElement(UserBar_default, {
+          name: user.name,
+          image: user.image,
+          status: user.status
+        });
+      }
+    })));
+  };
+  var UsersSection_default = UsersSection;
+
+  // src/components/channelpage/ChannelShortcut.jsx
+  var import_react13 = __toESM(require_react());
 
   // node_modules/react-icons/ai/index.esm.js
   function AiOutlineArrowDown(props) {
@@ -24161,9 +24326,22 @@
     return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 1024 1024" }, "child": [{ "tag": "path", "attr": { "d": "M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 0 0 203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z" } }] })(props);
   }
 
+  // node_modules/react-icons/im/index.esm.js
+  function ImInfo(props) {
+    return GenIcon({ "tag": "svg", "attr": { "version": "1.1", "viewBox": "0 0 16 16" }, "child": [{ "tag": "path", "attr": { "d": "M7 4.75c0-0.412 0.338-0.75 0.75-0.75h0.5c0.412 0 0.75 0.338 0.75 0.75v0.5c0 0.412-0.338 0.75-0.75 0.75h-0.5c-0.412 0-0.75-0.338-0.75-0.75v-0.5z" } }, { "tag": "path", "attr": { "d": "M10 12h-4v-1h1v-3h-1v-1h3v4h1z" } }, { "tag": "path", "attr": { "d": "M8 0c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8zM8 14.5c-3.59 0-6.5-2.91-6.5-6.5s2.91-6.5 6.5-6.5 6.5 2.91 6.5 6.5-2.91 6.5-6.5 6.5z" } }] })(props);
+  }
+  function ImExit(props) {
+    return GenIcon({ "tag": "svg", "attr": { "version": "1.1", "viewBox": "0 0 16 16" }, "child": [{ "tag": "path", "attr": { "d": "M12 10v-2h-5v-2h5v-2l3 3zM11 9v4h-5v3l-6-3v-13h11v5h-1v-4h-8l4 2v9h4v-3z" } }] })(props);
+  }
+
+  // node_modules/react-icons/hi/index.esm.js
+  function HiUserAdd(props) {
+    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 20 20", "fill": "currentColor" }, "child": [{ "tag": "path", "attr": { "d": "M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z" } }] })(props);
+  }
+
   // src/components/channelpage/ChannelShortcut.jsx
   var ChannelShortcut = ({ channel1 }) => {
-    const [isModalOpen, setIsModalOpen] = import_react13.default.useState(true);
+    const [isModalOpen, setIsModalOpen] = import_react13.default.useState(false);
     const toggleModal = () => {
       setIsModalOpen((prevSetIsModalOpen) => !prevSetIsModalOpen);
     };
@@ -24208,26 +24386,40 @@
     }, /* @__PURE__ */ import_react13.default.createElement("span", null, channel.name), /* @__PURE__ */ import_react13.default.createElement("div", {
       className: "channel-shortcut__header__icon"
     }, isModalOpen ? /* @__PURE__ */ import_react13.default.createElement(AiOutlineClose, null) : /* @__PURE__ */ import_react13.default.createElement(AiOutlineArrowDown, null))), /* @__PURE__ */ import_react13.default.createElement("div", {
-      className: "full-divider"
-    }), isModalOpen && /* @__PURE__ */ import_react13.default.createElement("div", {
-      className: "channel-shortcut__modal"
-    }, /* @__PURE__ */ import_react13.default.createElement("p", {
-      className: ""
-    }, "Info about channel"), /* @__PURE__ */ import_react13.default.createElement("div", {
+      className: `channel-shortcut__modal ${isModalOpen ? "show" : null}`
+    }, /* @__PURE__ */ import_react13.default.createElement("p", null, "Privacy settings ", /* @__PURE__ */ import_react13.default.createElement(MdPrivacyTip, null)), /* @__PURE__ */ import_react13.default.createElement("div", {
+      className: "divider"
+    }), /* @__PURE__ */ import_react13.default.createElement("p", null, "Invite friends ", /* @__PURE__ */ import_react13.default.createElement(HiUserAdd, null)), /* @__PURE__ */ import_react13.default.createElement("div", {
       className: "divider"
     }), /* @__PURE__ */ import_react13.default.createElement("p", {
-      className: ""
-    }, "Invite friends"), /* @__PURE__ */ import_react13.default.createElement("div", {
-      className: "divider"
-    }), /* @__PURE__ */ import_react13.default.createElement("p", {
-      className: " red"
-    }, "Leave channel")));
+      className: "red"
+    }, "Leave channel", /* @__PURE__ */ import_react13.default.createElement(ImExit, null))));
   };
   var ChannelShortcut_default = ChannelShortcut;
 
   // src/components/channelpage/ChannelNav.jsx
   var import_react14 = __toESM(require_react());
+
+  // node_modules/react-icons/bi/index.esm.js
+  function BiHash(props) {
+    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "d": "M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" } }] })(props);
+  }
+  function BiPin(props) {
+    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "d": "m12 22 1-2v-3h5a1 1 0 0 0 1-1v-1.586c0-.526-.214-1.042-.586-1.414L17 11.586V8a1 1 0 0 0 1-1V4c0-1.103-.897-2-2-2H8c-1.103 0-2 .897-2 2v3a1 1 0 0 0 1 1v3.586L5.586 13A2.01 2.01 0 0 0 5 14.414V16a1 1 0 0 0 1 1h5v3l1 2zM8 4h8v2H8V4zM7 14.414l1.707-1.707A.996.996 0 0 0 9 12V8h6v4c0 .266.105.52.293.707L17 14.414V15H7v-.586z" } }] })(props);
+  }
+  function BiUserPin(props) {
+    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "d": "M12 10c1.151 0 2-.848 2-2s-.849-2-2-2c-1.15 0-2 .848-2 2s.85 2 2 2zm0 1c-2.209 0-4 1.612-4 3.6v.386h8V14.6c0-1.988-1.791-3.6-4-3.6z" } }, { "tag": "path", "attr": { "d": "M19 2H5c-1.103 0-2 .897-2 2v13c0 1.103.897 2 2 2h4l3 3 3-3h4c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm-5 15-2 2-2-2H5V4h14l.002 13H14z" } }] })(props);
+  }
+  function BiUserPlus(props) {
+    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "d": "M19 8h-2v3h-3v2h3v3h2v-3h3v-2h-3zM4 8a3.91 3.91 0 0 0 4 4 3.91 3.91 0 0 0 4-4 3.91 3.91 0 0 0-4-4 3.91 3.91 0 0 0-4 4zm6 0a1.91 1.91 0 0 1-2 2 1.91 1.91 0 0 1-2-2 1.91 1.91 0 0 1 2-2 1.91 1.91 0 0 1 2 2zM4 18a3 3 0 0 1 3-3h2a3 3 0 0 1 3 3v1h2v-1a5 5 0 0 0-5-5H7a5 5 0 0 0-5 5v1h2z" } }] })(props);
+  }
+  function BiUserVoice(props) {
+    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "d": "M8 12c2.28 0 4-1.72 4-4s-1.72-4-4-4-4 1.72-4 4 1.72 4 4 4zm0-6c1.178 0 2 .822 2 2s-.822 2-2 2-2-.822-2-2 .822-2 2-2zm1 7H7c-2.757 0-5 2.243-5 5v1h2v-1c0-1.654 1.346-3 3-3h2c1.654 0 3 1.346 3 3v1h2v-1c0-2.757-2.243-5-5-5zm9.364-10.364L16.95 4.05C18.271 5.373 19 7.131 19 9s-.729 3.627-2.05 4.95l1.414 1.414C20.064 13.663 21 11.403 21 9s-.936-4.663-2.636-6.364z" } }, { "tag": "path", "attr": { "d": "M15.535 5.464 14.121 6.88C14.688 7.445 15 8.198 15 9s-.312 1.555-.879 2.12l1.414 1.416C16.479 11.592 17 10.337 17 9s-.521-2.592-1.465-3.536z" } }] })(props);
+  }
+
+  // src/components/channelpage/ChannelNav.jsx
   var ChannelNav = ({ channel1 }) => {
+    const [selectedChat, setSelectedChat] = import_react14.default.useState(null);
     const channel = {
       name: "GamesChannel",
       users: [
@@ -24251,52 +24443,73 @@
         }
       ],
       textChats: [
-        "Welcome",
-        "Work",
-        "Kurilka"
+        {
+          chatName: "Welcome",
+          unreadMessages: 0
+        },
+        {
+          chatName: "Work",
+          unreadMessages: 2
+        },
+        {
+          chatName: "Kurilka",
+          unreadMessages: 100
+        }
       ],
       voiceChats: [
-        "VoiceChat #1",
-        "VoiceChat #2",
-        "VoiceChat #3"
+        {
+          chatName: "VoiceChat #1",
+          activeUsers: []
+        },
+        {
+          chatName: "VoiceChat #2",
+          activeUsers: []
+        },
+        {
+          chatName: "VoiceChat #3",
+          activeUsers: []
+        }
       ]
+    };
+    const selectChat = (chat) => {
+      setSelectedChat(chat);
     };
     return /* @__PURE__ */ import_react14.default.createElement("div", {
       className: "channel-nav"
     }, /* @__PURE__ */ import_react14.default.createElement("div", {
       className: "channel-nav__category"
     }, /* @__PURE__ */ import_react14.default.createElement("p", {
-      className: "small gray bold"
+      className: "gray chat-category"
     }, "Text chats"), channel.textChats.map((chat) => {
       return /* @__PURE__ */ import_react14.default.createElement("p", {
-        className: "chat"
-      }, "#", chat);
+        className: `chat w600 white ${chat.chatName === selectedChat ? "chat__selected" : ""}`,
+        onClick: () => {
+          selectChat(chat.chatName);
+        }
+      }, /* @__PURE__ */ import_react14.default.createElement(BiHash, null), chat.chatName, chat.unreadMessages > 0 && /* @__PURE__ */ import_react14.default.createElement("div", {
+        className: "chat__unread"
+      }, chat.unreadMessages > 99 ? "99+" : `${chat.unreadMessages}`), /* @__PURE__ */ import_react14.default.createElement("div", {
+        className: "chat__add"
+      }, /* @__PURE__ */ import_react14.default.createElement(BiUserPlus, null)));
     })), /* @__PURE__ */ import_react14.default.createElement("div", {
       className: "channel-nav__category"
     }, /* @__PURE__ */ import_react14.default.createElement("p", {
-      className: "small gray bold"
+      className: "gray chat-category"
     }, "Voice chats"), channel.voiceChats.map((chat) => {
       return /* @__PURE__ */ import_react14.default.createElement("p", {
-        className: "chat"
-      }, "#", chat);
+        className: `chat w600 white ${chat.chatName === selectedChat ? "chat__selected" : ""}`,
+        onClick: () => {
+          selectChat(chat.chatName);
+        }
+      }, /* @__PURE__ */ import_react14.default.createElement(BiUserVoice, null), chat.chatName, /* @__PURE__ */ import_react14.default.createElement("div", {
+        className: "chat__add"
+      }, /* @__PURE__ */ import_react14.default.createElement(BiUserPlus, null)));
     })));
   };
   var ChannelNav_default = ChannelNav;
 
   // src/components/channelpage/ChannelChat.jsx
   var import_react15 = __toESM(require_react());
-
-  // node_modules/react-icons/gr/index.esm.js
-  function GrAdd(props) {
-    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "fill": "none", "stroke": "#000", "strokeWidth": "2", "d": "M12,22 L12,2 M2,12 L22,12" } }] })(props);
-  }
-
-  // node_modules/react-icons/md/index.esm.js
-  function MdAddReaction(props) {
-    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "fill": "none", "d": "M0 0h24v24H0z" } }, { "tag": "path", "attr": { "d": "M18 9V7h-2V2.84A9.929 9.929 0 0011.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12c0-1.05-.17-2.05-.47-3H18zm-2.5-1c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zm-7 0c.83 0 1.5.67 1.5 1.5S9.33 11 8.5 11 7 10.33 7 9.5 7.67 8 8.5 8zm3.5 9.5c-2.33 0-4.31-1.46-5.11-3.5h10.22c-.8 2.04-2.78 3.5-5.11 3.5zM22 3h2v2h-2v2h-2V5h-2V3h2V1h2v2z" } }] })(props);
-  }
-
-  // src/components/channelpage/ChannelChat.jsx
   var ChannelChat = ({ channel1 }) => {
     const channel = {
       name: "GamesChannel",
@@ -24321,14 +24534,32 @@
         }
       ],
       textChats: [
-        "Welcome",
-        "Work",
-        "Kurilka"
+        {
+          chatName: "Welcome",
+          unreadMessages: 0
+        },
+        {
+          chatName: "Work",
+          unreadMessages: 2
+        },
+        {
+          chatName: "Kurilka",
+          unreadMessages: 100
+        }
       ],
       voiceChats: [
-        "VoiceChat #1",
-        "VoiceChat #2",
-        "VoiceChat #3"
+        {
+          chatName: "VoiceChat #1",
+          activeUsers: []
+        },
+        {
+          chatName: "VoiceChat #2",
+          activeUsers: []
+        },
+        {
+          chatName: "VoiceChat #3",
+          activeUsers: []
+        }
       ],
       chat: [
         {
@@ -24338,12 +24569,12 @@
         },
         {
           user: "Bill Gates",
-          message: "Great Job!",
+          message: "Blah blah blah",
           timestamp: "Sunday, August 28, 2022 1:52 AM"
         },
         {
           user: "Elon Musk",
-          message: "Nah, could do much better than this.",
+          message: "(test for big solid message) BLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH",
           timestamp: "Sunday, August 28, 2022 1:53 AM"
         },
         {
@@ -24394,14 +24625,21 @@
       if (currentTextareaHeight < 90) {
         textareaRef.current.style.height = currentTextareaHeight + "px";
         formRef.current.style.height = currentTextareaHeight + "px";
+        chatMainRef.current.style.height = `calc(100vh - 36px - ${currentTextareaHeight + 20 + "px"})`;
+        chatMainRef.current.scrollTop = chatMainRef.current.scrollHeight;
       } else {
         textareaRef.current.style.height = "75px";
         formRef.current.style.height = "75px";
+        chatMainRef.current.style.height = `calc(100vh - 36px - 95px)`;
+        chatMainRef.current.scrollTop = chatMainRef.current.scrollHeight;
       }
       if (!input) {
         textareaRef.current.style.height = defaultTextareaHeight;
         formRef.current.style.height = defaultFormHeight;
+        chatMainRef.current.style.height = `calc(100vh - 36px - 50px)`;
+        chatMainRef.current.scrollTop = chatMainRef.current.scrollHeight;
       }
+      console.log(chatMainRef.current.style.height);
     }, [input]);
     import_react15.default.useEffect(() => {
       chatMainRef.current.scrollTop = chatMainRef.current.scrollHeight;
@@ -24410,7 +24648,13 @@
       className: "channel-chat"
     }, /* @__PURE__ */ import_react15.default.createElement("div", {
       className: "channel-chat__header"
-    }, "#Welcome"), /* @__PURE__ */ import_react15.default.createElement("div", {
+    }, /* @__PURE__ */ import_react15.default.createElement("div", {
+      className: "gray info"
+    }, /* @__PURE__ */ import_react15.default.createElement(ImInfo, null)), /* @__PURE__ */ import_react15.default.createElement("span", null, "# Welcome"), /* @__PURE__ */ import_react15.default.createElement("p", {
+      className: "gray users-amount"
+    }, /* @__PURE__ */ import_react15.default.createElement(BiUserPin, null), channel.users.length), /* @__PURE__ */ import_react15.default.createElement("p", {
+      className: "gray pin-amount"
+    }, /* @__PURE__ */ import_react15.default.createElement(BiPin, null), "0")), /* @__PURE__ */ import_react15.default.createElement("div", {
       className: "channel-chat__main",
       ref: chatMainRef
     }, chat.map((message) => {
