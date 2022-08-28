@@ -1,6 +1,11 @@
-import React from 'react'
+import React from 'react';
+
+// Icons
+import { BiHash, BiUserVoice, BiUserPlus } from 'react-icons/bi';
 
 const ChannelNav = ({channel1}) => {
+
+    const [selectedChat, setSelectedChat] = React.useState(null);
 
     const channel = {
         name: 'GamesChannel',
@@ -25,32 +30,69 @@ const ChannelNav = ({channel1}) => {
             },
         ],
         textChats: [
-            'Welcome',
-            'Work',
-            'Kurilka'
+            {
+                chatName: 'Welcome',
+                unreadMessages: 0,
+            },
+            {
+                chatName: 'Work',
+                unreadMessages: 2,
+            },
+            {
+                chatName: 'Kurilka',
+                unreadMessages: 100,
+            }
         ],
         voiceChats: [
-            'VoiceChat #1',
-            'VoiceChat #2',
-            'VoiceChat #3'
-        ]
+            {
+                chatName: 'VoiceChat #1',
+                activeUsers: [],
+            },
+            {
+                chatName: 'VoiceChat #2',
+                activeUsers: [],
+            },
+            {
+                chatName: 'VoiceChat #3',
+                activeUsers: [],
+            }
+        ],
+    }
+
+    const selectChat = (chat) => {
+        setSelectedChat(chat);
     }
 
   return (
     <div className='channel-nav'>
         <div className='channel-nav__category'>
-            <p className='small gray bold'>Text chats</p>
+            <p className='gray chat-category'>Text chats</p>
             {channel.textChats.map((chat) => {
                 return (
-                <p className='chat'>#{chat}</p>
+                <p className={`chat w600 white ${chat.chatName === selectedChat ? 'chat__selected': ''}`} onClick={() => {selectChat(chat.chatName)}}>
+                    <BiHash /> 
+                    {chat.chatName}
+                    {chat.unreadMessages > 0 && <div className='chat__unread'>
+                        {chat.unreadMessages > 99 ? "99+" : `${chat.unreadMessages}`}
+                    </div>}
+                    <div className='chat__add'>
+                        <BiUserPlus />
+                    </div>
+                </p>
                 )
             })}
         </div>
         <div className='channel-nav__category'>
-            <p className='small gray bold'>Voice chats</p>
+            <p className='gray chat-category'>Voice chats</p>
             {channel.voiceChats.map((chat) => {
                 return (
-                <p className='chat'>#{chat}</p>
+                <p className={`chat w600 white ${chat.chatName === selectedChat ? 'chat__selected': ''}`}  onClick={() => {selectChat(chat.chatName)}}>
+                    <BiUserVoice /> 
+                    {chat.chatName}
+                    <div className='chat__add'>
+                        <BiUserPlus />
+                    </div>
+                </p>
                 )
             })}
         </div>

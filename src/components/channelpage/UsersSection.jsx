@@ -3,6 +3,8 @@ import UserBar from '../UserBar'
 
 const UsersSection = () => {
 
+    const [findInput, setFindInput] = React.useState('');
+
     const users = [
         {
             name: 'Tsay Dmitriy',
@@ -22,10 +24,90 @@ const UsersSection = () => {
             online: false,
             status: 'Chilling'
         },
+        {
+            name: 'Elon Musk',
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s',
+            online: false,
+            status: 'Chilling'
+        },
+        {
+            name: 'Elon Musk',
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s',
+            online: false,
+            status: 'Chilling'
+        },
+        {
+            name: 'Elon Musk',
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s',
+            online: false,
+            status: 'Chilling'
+        },
+        {
+            name: 'Elon Musk',
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s',
+            online: false,
+            status: 'Chilling'
+        },
+        {
+            name: 'Elon Musk',
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s',
+            online: false,
+            status: 'Chilling'
+        },
+        {
+            name: 'Elon Musk',
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s',
+            online: false,
+            status: 'Chilling'
+        },
+        {
+            name: 'Elon Musk',
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s',
+            online: false,
+            status: 'Chilling'
+        },
+        {
+            name: 'Elon Musk',
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s',
+            online: false,
+            status: 'Chilling'
+        },
+        {
+            name: 'Elon Musk',
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s',
+            online: false,
+            status: 'Chilling'
+        },
+        {
+            name: 'Elon Musk',
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s',
+            online: false,
+            status: 'Chilling'
+        },
+        {
+            name: 'Elon Musk',
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s',
+            online: false,
+            status: 'Chilling'
+        },
     ]
+
+    const findUser = (event) => {
+        setFindInput(event.target.value)
+    }
 
   return (
     <div className='users-section'>
+        <div className='users-section__scroll'>
+            <div className='users-section__header'>
+                <input 
+                type='text'
+                value={findInput}
+                onChange={(e) => findUser(e)}
+                placeholder='Find user'
+                />
+            </div>
+        </div>
         <div className='users-section__category'>
             <p className='small gray bold'>Online</p>
             {users.map((user) => {

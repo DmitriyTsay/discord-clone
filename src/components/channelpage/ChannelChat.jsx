@@ -1,8 +1,10 @@
 import React from 'react';
 
 // Icons
-import {GrAdd} from 'react-icons/gr';
-import {MdAddReaction} from 'react-icons/md';
+import { GrAdd } from 'react-icons/gr';
+import { MdAddReaction } from 'react-icons/md';
+import { BiUserPin, BiPin } from 'react-icons/bi';
+import { ImInfo } from 'react-icons/im'
 
 const ChannelChat = ({channel1}) => {
 
@@ -29,14 +31,32 @@ const ChannelChat = ({channel1}) => {
             },
         ],
         textChats: [
-            'Welcome',
-            'Work',
-            'Kurilka'
+            {
+                chatName: 'Welcome',
+                unreadMessages: 0,
+            },
+            {
+                chatName: 'Work',
+                unreadMessages: 2,
+            },
+            {
+                chatName: 'Kurilka',
+                unreadMessages: 100,
+            }
         ],
         voiceChats: [
-            'VoiceChat #1',
-            'VoiceChat #2',
-            'VoiceChat #3'
+            {
+                chatName: 'VoiceChat #1',
+                activeUsers: [],
+            },
+            {
+                chatName: 'VoiceChat #2',
+                activeUsers: [],
+            },
+            {
+                chatName: 'VoiceChat #3',
+                activeUsers: [],
+            }
         ],
         chat: [
             {
@@ -46,12 +66,12 @@ const ChannelChat = ({channel1}) => {
             },
             {
                 user: 'Bill Gates',
-                message: 'Great Job!',
+                message: 'Blah blah blah',
                 timestamp: 'Sunday, August 28, 2022 1:52 AM'
             },
             {
                 user: 'Elon Musk',
-                message: 'Nah, could do much better than this.',
+                message: '(test for big solid message) BLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH',
                 timestamp: 'Sunday, August 28, 2022 1:53 AM'
             },
             {
@@ -60,7 +80,6 @@ const ChannelChat = ({channel1}) => {
                 timestamp: 'Sunday, August 28, 2022 1:54 AM'
             },
         ]
-
     }
 
     const formRef = React.useRef(null);
@@ -114,15 +133,23 @@ const ChannelChat = ({channel1}) => {
         if (currentTextareaHeight < 90) {
             textareaRef.current.style.height = currentTextareaHeight + "px";
             formRef.current.style.height = currentTextareaHeight + "px";
+            chatMainRef.current.style.height = `calc(100vh - 36px - ${currentTextareaHeight + 20 + 'px'})`;
+            chatMainRef.current.scrollTop = chatMainRef.current.scrollHeight;
         } else {
             textareaRef.current.style.height = "75px";
             formRef.current.style.height = "75px";
+            chatMainRef.current.style.height = `calc(100vh - 36px - 95px)`;
+            chatMainRef.current.scrollTop = chatMainRef.current.scrollHeight;
         }
 
         if (!input) {
             textareaRef.current.style.height = defaultTextareaHeight;
             formRef.current.style.height = defaultFormHeight;
+            chatMainRef.current.style.height = `calc(100vh - 36px - 50px)`;
+            chatMainRef.current.scrollTop = chatMainRef.current.scrollHeight;
         }
+
+        console.log(chatMainRef.current.style.height);
     },[input])
 
     // Hook for insta scroll down with new message
@@ -132,7 +159,12 @@ const ChannelChat = ({channel1}) => {
 
   return (
     <div className='channel-chat'>
-        <div className='channel-chat__header'>#Welcome</div>
+        <div className='channel-chat__header'>
+            <div className='gray info'><ImInfo /></div>
+            <span># Welcome</span>
+            <p className='gray users-amount'><BiUserPin />{channel.users.length}</p>
+            <p className='gray pin-amount'><BiPin />0</p>
+        </div>
         <div className='channel-chat__main' ref={chatMainRef}>
             {chat.map((message) => {
                 return (

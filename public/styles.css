@@ -23,6 +23,10 @@ body {
     font-weight: bold;
 }
 
+.w600 {
+    font-weight: 600;
+}
+
 .small {
     font-size: 12px !important;
 }
@@ -40,7 +44,7 @@ body {
 }
 
 .divider {
-    border-top: 1px solid gray;
+    border-top: 1px solid black;
 
     width: 90%;
 
@@ -48,7 +52,7 @@ body {
 }
 
 .full-divider {
-    border-top: 1px solid gray;
+    border-top: 1px solid black;
 
     width: 100%;
 }
@@ -58,30 +62,33 @@ body {
 .sidenav {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 
     height: 100vh;
 
     padding: 15px 0;
 
-    justify-content: flex-start;
-    align-items: center;
+    border-right: 1px solid rgb(25,25,25);
 
-    background: rgb(55,55,55);
+    background:#040d2a;
 
     width: 75px;
 }
 
 .sidenav__divider {
     border-top: 3px solid black;
-    width: 50%;
-    margin-bottom: 10px;
+    width: 70%;
+    margin: 10px auto 4px auto;
 }
 
 /* -----SIDENAV __ CHANNEL CARDS ----- */
 
 .channel-card {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+
+    position: relative;
 
     margin-bottom: 10px;
 }
@@ -93,17 +100,20 @@ body {
     
     cursor: pointer;
     
-    background: transparent;
+    background: #072743;
 
     width: 50px;
     height: 50px;
 
     border-radius: 50%;
-    border: 1px solid black;
     
     overflow: hidden;
 
     transition: border-radius 0.3s;
+}
+
+.selected {
+    box-shadow: 0 0 4px 3px #c1ccd7;
 }
 
 .channel-card__img:hover {
@@ -113,6 +123,54 @@ body {
 .channel-card__img img {
     width: 50px;
     height: 50px;
+}
+
+.channel-card__modal {
+    position: absolute;
+
+    background: #c1ccd7;
+
+    padding: 18px;
+
+    border-radius: 5px;
+
+    width: auto;
+
+    font-size: 0.8em;
+
+    left: 65px;
+
+    z-index: 10;    
+}
+
+/* -----SIDE NAV__SETTINGS----- */
+
+.sidenav__settings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: auto;
+    padding: 5px;
+
+    border-radius: 5px;
+
+    width: 40px;
+    height: 40px;
+
+    color: rgb(200,200,200);
+
+    cursor: pointer;
+}
+
+.sidenav__settings > svg {
+    width: 22px;
+    height: 22px;
+}
+
+.sidenav__settings:hover {
+    background: #c1ccd7;
+    color: black;
 }
 
 /* -----HOME PAGE----- */
@@ -130,8 +188,6 @@ body {
     display: flex;
     flex-direction: column;
 
-    border-radius: 10px;
-
     width: 250px;
 
     overflow: hidden;
@@ -148,9 +204,7 @@ body {
 
     padding: 10px;
 
-    border: 1px solid green;
-
-    background: rgb(75,75,75);
+    background: #072743;
 }
 
 /* -----MESSAGE SECTION----- */
@@ -162,7 +216,7 @@ body {
 
     padding: 10px;
 
-    background: rgb(75,75,75);
+    background: #072743;
 }
 
 /* -----PROFILE BAR----- */
@@ -177,7 +231,7 @@ body {
 
     height: 65px;
 
-    background: rgb(75,75,75);
+    background:#040d2a;
 }
 
 /* -----PROFILE BAR__CREDENTIALS----- */
@@ -187,7 +241,7 @@ body {
     grid-template-columns: auto auto;
     grid-template-rows: auto auto;
 
-    padding: 5px;
+    padding: 5px 12px;
 
     border-radius: 5px;
 
@@ -197,7 +251,7 @@ body {
 }
 
 .profile-bar__credentials:hover {
-    background: rgb(100,100,100);
+    background: #c1ccd7;
 }
 
 .profile-bar__credentials p {
@@ -207,6 +261,11 @@ body {
     font-size: 12px;
 }
 
+.profile-bar__credentials:hover p {
+    background: #c1ccd7;
+    color: black;
+}
+
 .credentials__id {
     margin-top: -5px;
 }
@@ -214,6 +273,8 @@ body {
 .profile-bar__credentials__image {
     width: 40px; 
     height: 40px;
+
+    border-radius: 50%;
 
     overflow: hidden;
 
@@ -227,13 +288,47 @@ body {
     height: 40px;
 }
 
+/* -----PROFILE BAR__MIC AND HEADSET----- */
+
+.profile-bar__mic,
+.profile-bar__headset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 2px;
+
+    padding: 5px;
+
+    border-radius: 5px;
+
+    width: 40px;
+    height: 40px;
+
+    color: rgb(200,200,200);
+
+    cursor: pointer;    
+}
+
+.profile-bar__mic > svg,
+.profile-bar__headset > svg {
+    width: 22px;
+    height: 22px;
+}
+
+.profile-bar__mic:hover,
+.profile-bar__headset:hover {
+    background: #c1ccd7;
+
+    color: black;
+}
+
 /* -----HOME PAGE__SECOND SECTION----- */
 
 .home-page__second {
     width: calc(100vw - 75px - 250px);
 
-    background-color: rgb(125,125,125);
-    border: 1px solid red;
+    background-color: #072743;
 }
 
 /* -----CHANNEL PAGE----- */
@@ -251,9 +346,6 @@ body {
     display: flex;
     flex-direction: column;
 
-    border-radius: 5px;
-    border: 1px solid rgb(150,150,150);
-
     width: 250px;
 
     overflow: hidden;
@@ -268,15 +360,19 @@ body {
 }
 
 .channel-shortcut__header {
+    position: relative;
+
     display: flex;
     align-items: center;
 
     padding: 0 10px;
 
     width: 250px;
-    height: 35px;
+    height: 36px;
 
-    background: rgb(75,75,75);
+    background: #040d2a;
+    border-bottom: 1px solid rgb(25,25,25);
+    box-shadow: 0 1px 1px 0 rgb(25,25,25);
 
     cursor: pointer;
     
@@ -285,19 +381,21 @@ body {
 }
 
 .channel-shortcut__header:hover {
-    background: rgb(100,100,100);
+    background: rgb(6, 40, 75);
 }
 
 .channel-shortcut__header__icon {
     margin-left: auto;
 
-    width: 15px;
-    height: 15px;
+    width: 13px;
+    height: 13px;
 }
 
 .channel-shortcut__header__icon svg {
-    width: 15px;
-    height: 15px;
+    width: 13px;
+    height: 13px;
+
+    color: rgb(150,150,150);
 }
 
 .channel-shortcut__modal {
@@ -305,22 +403,52 @@ body {
     top: 40px;
 
     width: 240px;
+    height: 0;
 
-    padding: 10px 0 10px 15px;
+    padding: 0 0 0 15px;
 
-    background: rgb(55,55,55);
+    background: #040d2a;
 
     border-radius: 15px;
 
     font-size: 0.8em;   
+
+    z-index: 1;
+    overflow: hidden;
+
+    color: white;
+
+    transition: padding 0.2s;
+}
+
+.show {
+    padding: 20px 0 20px 15px;
+    height: auto;
+
+    box-shadow: 0 0 1px 1px #040d2a;
 }
 
 .channel-shortcut__modal > p {
+    display: flex;
+    align-items: center;
+
     margin: 5px 0;
+    padding: 5px;
+
+    border-radius: 5px;
+
+    width: 90%;
+}
+
+.channel-shortcut__modal > p > svg {
+    margin-left: auto;
 }
 
 .channel-shortcut__modal > p:hover {
     color: white;
+
+    background: #175259;
+
     cursor: pointer;
 }
 
@@ -330,7 +458,103 @@ body {
 
     padding: 15px 10px 0;
 
-    background: rgb(100,100,100);
+    background: #072743;
+}
+
+.channel-nav__category {
+    margin-bottom: 15px;
+}
+
+/* -----CHAT----- */
+
+.channel-nav__category .chat-category {
+    margin-bottom: 5px;
+}
+
+.channel-nav__category .chat {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    
+    margin-bottom: 1px;
+    padding: 3px 0;
+
+    height: 30px;
+
+    border-radius: 5px;
+
+    font-size: 0.8em;
+
+    cursor: pointer;
+}
+
+.channel-nav__category .chat:hover {
+    background: #c1ccd7;
+
+    color: black;
+
+    display: flex;
+}
+
+.channel-nav__category .chat svg {
+    margin-right: 10px;
+    margin-left: 1em;
+
+    height: 16px;
+    width: 16px;
+}
+
+.chat__unread {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    right: 5px;
+
+    padding: 3px;
+
+    width: 3em;
+
+    border-radius: 5px;
+
+    background: rgb(208, 52, 44);
+
+    transition: right 0.3s;
+    
+    font-size: 0.8em;
+
+    color: white !important;
+}
+
+.channel-nav__category .chat:hover > .chat__unread {
+    right: 30px;
+}
+
+.chat__add {
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: auto;
+}
+
+.channel-nav__category .chat:hover > .chat__add {
+    background: #c1ccd7;
+
+    display: flex;
+}
+
+.chat__add:hover {
+    color: #175259;
+    cursor: pointer;
+}
+
+.chat__selected {
+    background: #c1ccd7;
+
+    color: black;
 }
 
 
@@ -341,20 +565,29 @@ body {
 
     background-color: rgb(75,75,75);
 
-    border-radius: 5px;
-    border: 1px solid rgb(150,150,150);
-
     overflow: hidden;
+}
+
+.channel-chat {
+    width: 100%;
+
+    height: 100vh;
+    
+    position: relative;
+
+    background:  	#175259;
 }
 
 
 .channel-chat__header {
-    /* border: 1px solid yellow; */
+    position: relative;
+
     display: flex;
     align-items: center;
 
-    background: rgb(75,75,75);
-    border-bottom: 1px solid rgb(150,150,150);
+    background: #040d2a;
+    border-bottom: 1px solid rgb(25,25,25);
+    box-shadow: 0 1px 1px 0 rgb(25,25,25);
     
     height: 36px;
 
@@ -363,16 +596,76 @@ body {
     font-size: 0.8em;
 
     padding: 0 15px;
+    
+    z-index: 1;
+}
+
+.channel-chat__header .info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 0.9em;
+    
+    margin-left: -7px;
+    margin-right: 7px;
+}
+
+.channel-chat__header .info svg {
+    height: 17px;
+    width: 17px;
+}
+
+.channel-chat__header .info svg:hover {
+    color: #c1ccd7;
+    
+    cursor: pointer;
+}
+
+.channel-chat__header .users-amount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 0.9em;
+    
+    margin-left: auto;
+}
+
+.channel-chat__header .users-amount svg {
+    height: 15px;
+    width: 15px;
+
+    margin-right: 2px;
+}
+
+.channel-chat__header .pin-amount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 0.9em;
+    
+    margin-left: 15px;
+}
+
+.channel-chat__header .pin-amount svg {
+    height: 15px;
+    width: 15px;
+
+    margin-right: 2px;
 }
 
 .channel-chat__main {
     height: calc(100vh - 36px - 50px);
 
+    position: relative;
+
     overflow: auto;
 
-    transition: all 0.5s;
-
     padding: 15px;
+
+    background:#175259;
 }
 
 /* -----MESSAGES (CHAT)----- */
@@ -392,7 +685,7 @@ body {
 }
 
 .message:hover {
-    background: rgb(100,100,100);
+    background: #072743;
 }
 
 .message > img {
@@ -417,9 +710,14 @@ body {
     justify-content: center;
     align-items: center;
 
-    position: relative;
+    position: absolute;
+    bottom: 5px;
+
+    width: 100%;
 
     height: 50px;
+
+    background:  	#175259;
 }
 
 .channel-chat__input form {
@@ -432,7 +730,7 @@ body {
 }
 
 .channel-chat__input textarea {
-    padding: 6px 30px 5px 33px;
+    padding: 6px 32px 5px 36px;
 
     width: 100%; 
     height: 30px; 
@@ -443,6 +741,8 @@ body {
     display: flex;
 
     resize: none;
+
+    user-select: unset;
 }
 
 .channel-chat__input__add {
@@ -464,8 +764,9 @@ body {
     z-index: 1;
 }
 
-.channel-chat__input__add:hover {
-    background: rgb(220,220,220);
+.channel-chat__input__add:hover,
+.channel-chat__input__emoji:hover {
+    background: #c1ccd7;
 }
 
 .channel-chat__input__emoji {
@@ -480,23 +781,16 @@ body {
     right: 10px;
     top: 3px;
 
+    color: black;
+
     border-radius: 5px;
 
     cursor: pointer;
 
     z-index: 1;
-    
-    transition: all 1s;
-}
-
-.channel-chat__input__emoji:hover {
-    background: rgb(220,220,220);
 }
 
 @media screen and (max-width: 1000px) {
-    .channel-chat__input__emoji {
-        transition: all 10s;
-    }
 
     .channel-page__third {
         z-index: 2;
@@ -511,9 +805,6 @@ body {
 
     width: 250px;
 
-    border-radius: 5px;
-    border: 1px solid rgb(150,150,150);
-
     overflow: hidden;
 }
 
@@ -523,9 +814,13 @@ body {
     display: flex;
     flex-direction: column;
     
-    background: rgb(75,75,75);
+    background: #072743;
 
     height: 100vh;
+
+    padding-top: 36px;
+
+    position: relative;
 
     overflow: auto;
 }
@@ -533,6 +828,44 @@ body {
 /* Doesn't work for IE, firefox, but with Electron will be fine IMO */
 ::-webkit-scrollbar {
     width: 0px;
+}
+
+.users-section__scroll {
+    position: absolute;
+    top: 18px;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.users-section__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 250px;
+
+    position: fixed;
+
+    height: 36px;
+    border-bottom: 1px solid rgb(25,25,25);
+    box-shadow: 0 1px 1px 0 rgb(25,25,25);
+
+    background: #040d2a;
+}
+
+.users-section__header input {
+
+    width: 230px;
+
+    padding: 1px 5px;
+
+    border-radius: 5px;
+
+    transition: width 0.5s;
 }
 
 .users-section__category {
@@ -564,13 +897,17 @@ body {
 
     border-radius: 10px;
 
-    background: rgb(75,75,75);
+    background: #072743;
 }
 
 @media screen and (max-width: 1000px) {
     
     .users-section__category > p {
         margin-left: 10px;
+    }
+
+    .users-section__header input {
+        width: 40px;
     }
 
     .channel-page__second {
@@ -590,10 +927,18 @@ body {
     .channel-page__third:hover {
         width: 250px;
     }
+
+    .channel-page__third:hover .users-section__header input {
+        width: 90%;
+    }
 }
 
 .user-bar:hover {
-    background: rgb(100,100,100);
+    background: #c1ccd7;
+}
+
+.user-bar:hover .user-bar__credentials {
+    color: black;
 }
 
 /* -----USER BAR__CREDENTIALS----- */
@@ -608,6 +953,8 @@ body {
     cursor: pointer;
 
     align-items: center;
+
+    color: white;
 }
 
 .user-bar__credentials p {

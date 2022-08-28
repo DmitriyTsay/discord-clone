@@ -2,10 +2,13 @@ import React from 'react';
 
 // Icons
 import {AiOutlineArrowDown, AiOutlineClose} from 'react-icons/ai';
+import { ImExit, } from 'react-icons/im';
+import { HiUserAdd } from 'react-icons/hi';
+import { MdPrivacyTip } from 'react-icons/md';
 
 const ChannelShortcut = ({channel1}) => {
 
-    const [ isModalOpen, setIsModalOpen ] = React.useState(true);
+    const [ isModalOpen, setIsModalOpen ] = React.useState(false);
 
     const toggleModal = () => {
         setIsModalOpen((prevSetIsModalOpen) => !prevSetIsModalOpen);
@@ -53,14 +56,13 @@ const ChannelShortcut = ({channel1}) => {
                 {isModalOpen ? <AiOutlineClose /> : <AiOutlineArrowDown />}
             </div>
         </div>
-        <div className='full-divider'></div>
-        {isModalOpen && <div className='channel-shortcut__modal'>
-            <p className=''>Info about channel</p>
+        <div className={`channel-shortcut__modal ${isModalOpen ? 'show' : null}`}>
+            <p>Privacy settings <MdPrivacyTip /></p>
             <div className='divider'></div>
-            <p className=''>Invite friends</p>
+            <p>Invite friends <HiUserAdd /></p>
             <div className='divider'></div>
-            <p className=' red'>Leave channel</p>
-        </div>}
+            <p className='red'>Leave channel<ImExit /></p>
+        </div>
     </div>
   )
 }
