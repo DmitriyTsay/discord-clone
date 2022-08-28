@@ -9940,8 +9940,8 @@
               var nextNode = node.nextSibling;
               parentInstance.removeChild(node);
               if (nextNode && nextNode.nodeType === COMMENT_NODE) {
-                var data2 = nextNode.data;
-                if (data2 === SUSPENSE_END_DATA) {
+                var data = nextNode.data;
+                if (data === SUSPENSE_END_DATA) {
                   if (depth === 0) {
                     parentInstance.removeChild(nextNode);
                     retryIfBlockedOn(suspenseInstance);
@@ -9949,7 +9949,7 @@
                   } else {
                     depth--;
                   }
-                } else if (data2 === SUSPENSE_START_DATA || data2 === SUSPENSE_PENDING_START_DATA || data2 === SUSPENSE_FALLBACK_START_DATA) {
+                } else if (data === SUSPENSE_START_DATA || data === SUSPENSE_PENDING_START_DATA || data === SUSPENSE_FALLBACK_START_DATA) {
                   depth++;
                 }
               }
@@ -10094,14 +10094,14 @@
             var depth = 0;
             while (node) {
               if (node.nodeType === COMMENT_NODE) {
-                var data2 = node.data;
-                if (data2 === SUSPENSE_END_DATA) {
+                var data = node.data;
+                if (data === SUSPENSE_END_DATA) {
                   if (depth === 0) {
                     return getNextHydratableSibling(node);
                   } else {
                     depth--;
                   }
-                } else if (data2 === SUSPENSE_START_DATA || data2 === SUSPENSE_FALLBACK_START_DATA || data2 === SUSPENSE_PENDING_START_DATA) {
+                } else if (data === SUSPENSE_START_DATA || data === SUSPENSE_FALLBACK_START_DATA || data === SUSPENSE_PENDING_START_DATA) {
                   depth++;
                 }
               }
@@ -10114,14 +10114,14 @@
             var depth = 0;
             while (node) {
               if (node.nodeType === COMMENT_NODE) {
-                var data2 = node.data;
-                if (data2 === SUSPENSE_START_DATA || data2 === SUSPENSE_FALLBACK_START_DATA || data2 === SUSPENSE_PENDING_START_DATA) {
+                var data = node.data;
+                if (data === SUSPENSE_START_DATA || data === SUSPENSE_FALLBACK_START_DATA || data === SUSPENSE_PENDING_START_DATA) {
                   if (depth === 0) {
                     return node;
                   } else {
                     depth--;
                   }
-                } else if (data2 === SUSPENSE_END_DATA) {
+                } else if (data === SUSPENSE_END_DATA) {
                   depth++;
                 }
               }
@@ -23933,11 +23933,11 @@
       }, node.attr), Tree2Element(node.child));
     });
   }
-  function GenIcon(data2) {
+  function GenIcon(data) {
     return function(props) {
       return import_react4.default.createElement(IconBase, __assign({
-        attr: __assign({}, data2.attr)
-      }, props), Tree2Element(data2.child));
+        attr: __assign({}, data.attr)
+      }, props), Tree2Element(data.child));
     };
   }
   function IconBase(props) {
@@ -24011,7 +24011,7 @@
 
   // src/components/SideNav.jsx
   var SideNav = () => {
-    const data2 = {
+    const data = {
       channels: [
         {
           channelName: "Homepage",
@@ -24037,7 +24037,7 @@
     };
     return /* @__PURE__ */ import_react6.default.createElement("nav", {
       className: "sidenav"
-    }, data2.channels.map((channel) => {
+    }, data.channels.map((channel) => {
       return /* @__PURE__ */ import_react6.default.createElement(ChannelCard_default, {
         page: channel.channelName === "Homepage" ? "/" : "/channel",
         img: channel.image,
@@ -24197,7 +24197,7 @@
       {
         name: "Bill Gates",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmy4xLx6IpXyhloRDttTWPp8k_0ULF3uZMFoIpLsQBQg&s",
-        online: false,
+        online: true,
         status: "Working"
       },
       {
@@ -24319,6 +24319,9 @@
   var import_react13 = __toESM(require_react());
 
   // node_modules/react-icons/ai/index.esm.js
+  function AiFillBulb(props) {
+    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 1024 1024" }, "child": [{ "tag": "path", "attr": { "d": "M348 676.1C250 619.4 184 513.4 184 392c0-181.1 146.9-328 328-328s328 146.9 328 328c0 121.4-66 227.4-164 284.1V792c0 17.7-14.3 32-32 32H380c-17.7 0-32-14.3-32-32V676.1zM392 888h240c4.4 0 8 3.6 8 8v32c0 17.7-14.3 32-32 32H416c-17.7 0-32-14.3-32-32v-32c0-4.4 3.6-8 8-8z" } }] })(props);
+  }
   function AiOutlineArrowDown(props) {
     return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 1024 1024" }, "child": [{ "tag": "path", "attr": { "d": "M862 465.3h-81c-4.6 0-9 2-12.1 5.5L550 723.1V160c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v563.1L255.1 470.8c-3-3.5-7.4-5.5-12.1-5.5h-81c-6.8 0-10.5 8.1-6 13.2L487.9 861a31.96 31.96 0 0 0 48.3 0L868 478.5c4.5-5.2.8-13.2-6-13.2z" } }] })(props);
   }
@@ -24346,7 +24349,7 @@
       setIsModalOpen((prevSetIsModalOpen) => !prevSetIsModalOpen);
     };
     const channel = {
-      name: "GamesChannel",
+      name: "Games",
       users: [
         {
           name: "Tsay Dmitriy",
@@ -24387,7 +24390,9 @@
       className: "channel-shortcut__header__icon"
     }, isModalOpen ? /* @__PURE__ */ import_react13.default.createElement(AiOutlineClose, null) : /* @__PURE__ */ import_react13.default.createElement(AiOutlineArrowDown, null))), /* @__PURE__ */ import_react13.default.createElement("div", {
       className: `channel-shortcut__modal ${isModalOpen ? "show" : null}`
-    }, /* @__PURE__ */ import_react13.default.createElement("p", null, "Privacy settings ", /* @__PURE__ */ import_react13.default.createElement(MdPrivacyTip, null)), /* @__PURE__ */ import_react13.default.createElement("div", {
+    }, /* @__PURE__ */ import_react13.default.createElement("p", null, "About Channel ", /* @__PURE__ */ import_react13.default.createElement(AiFillBulb, null)), /* @__PURE__ */ import_react13.default.createElement("div", {
+      className: "divider"
+    }), /* @__PURE__ */ import_react13.default.createElement("p", null, "Privacy settings ", /* @__PURE__ */ import_react13.default.createElement(MdPrivacyTip, null)), /* @__PURE__ */ import_react13.default.createElement("div", {
       className: "divider"
     }), /* @__PURE__ */ import_react13.default.createElement("p", null, "Invite friends ", /* @__PURE__ */ import_react13.default.createElement(HiUserAdd, null)), /* @__PURE__ */ import_react13.default.createElement("div", {
       className: "divider"
@@ -24512,7 +24517,7 @@
   var import_react15 = __toESM(require_react());
   var ChannelChat = ({ channel1 }) => {
     const channel = {
-      name: "GamesChannel",
+      name: "Games",
       users: [
         {
           name: "Tsay Dmitriy",
@@ -24523,7 +24528,7 @@
         {
           name: "Bill Gates",
           image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmy4xLx6IpXyhloRDttTWPp8k_0ULF3uZMFoIpLsQBQg&s",
-          online: false,
+          online: true,
           status: "Working"
         },
         {
@@ -24593,7 +24598,6 @@
       for (let i = 0; i < channel.users.length; i++) {
         if (channel.users[i].name === userName) {
           return channel.users[i].image;
-          break;
         }
       }
     };
@@ -24654,7 +24658,11 @@
       className: "gray users-amount"
     }, /* @__PURE__ */ import_react15.default.createElement(BiUserPin, null), channel.users.length), /* @__PURE__ */ import_react15.default.createElement("p", {
       className: "gray pin-amount"
-    }, /* @__PURE__ */ import_react15.default.createElement(BiPin, null), "0")), /* @__PURE__ */ import_react15.default.createElement("div", {
+    }, /* @__PURE__ */ import_react15.default.createElement(BiPin, null), "0"), /* @__PURE__ */ import_react15.default.createElement("div", {
+      className: "channel-chat__header__modal"
+    }, /* @__PURE__ */ import_react15.default.createElement("p", null, "Description of chat")), /* @__PURE__ */ import_react15.default.createElement("div", {
+      className: "pin-amount__modal"
+    }, /* @__PURE__ */ import_react15.default.createElement("p", null, "Pinned messages"))), /* @__PURE__ */ import_react15.default.createElement("div", {
       className: "channel-chat__main",
       ref: chatMainRef
     }, chat.map((message) => {
