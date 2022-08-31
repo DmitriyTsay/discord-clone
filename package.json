@@ -4,7 +4,8 @@
   "description": "Discord clone for Fntastic Test Task",
   "main": "main.js",
   "scripts": {
-    "build": "esbuild src/index.js --bundle --outfile=build.js --loader:.js=jsx",
+    "build": "react-scripts build",
+    "esbuild": "esbuild src/index.js --bundle --outfile=build.js --loader:.js=jsx",
     "start:electron": "wait-on -v file:/build.js && electron .",
     "electron": "electron .",
     "start:react": "react-scripts start"
