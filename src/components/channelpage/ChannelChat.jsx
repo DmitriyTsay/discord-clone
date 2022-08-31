@@ -6,93 +6,18 @@ import { MdAddReaction } from 'react-icons/md';
 import { BiUserPin, BiPin } from 'react-icons/bi';
 import { ImInfo } from 'react-icons/im'
 
-const ChannelChat = ({channel1}) => {
-
-    const channel = {
-        name: 'Games',
-        users: [
-            {
-                name: 'Tsay Dmitriy',
-                image: 'https://thumbs.dreamstime.com/b/cute-cat-portrait-square-photo-beautiful-white-closeup-105311158.jpg',
-                online: true,
-                status: 'Working'
-            },
-            {
-                name: 'Bill Gates',
-                image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmy4xLx6IpXyhloRDttTWPp8k_0ULF3uZMFoIpLsQBQg&s',
-                online: true,
-                status: 'Working'
-            },
-            {
-                name: 'Elon Musk',
-                image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s',
-                online: false,
-                status: 'Chilling'
-            },
-        ],
-        textChats: [
-            {
-                chatName: 'Welcome',
-                unreadMessages: 0,
-            },
-            {
-                chatName: 'Work',
-                unreadMessages: 2,
-            },
-            {
-                chatName: 'Kurilka',
-                unreadMessages: 100,
-            }
-        ],
-        voiceChats: [
-            {
-                chatName: 'VoiceChat #1',
-                activeUsers: [],
-            },
-            {
-                chatName: 'VoiceChat #2',
-                activeUsers: [],
-            },
-            {
-                chatName: 'VoiceChat #3',
-                activeUsers: [],
-            }
-        ],
-        chat: [
-            {
-                user: 'Tsay Dmitriy',
-                message: 'Greetings!!!!!!!!!!!!!!!!!!!!!!! (check for big messages) On this page you can see my design of the test task.',
-                timestamp: 'Sunday, August 28, 2022 1:51 AM'
-            },
-            {
-                user: 'Bill Gates',
-                message: 'Blah blah blah',
-                timestamp: 'Sunday, August 28, 2022 1:52 AM'
-            },
-            {
-                user: 'Elon Musk',
-                message: '(test for big solid message) BLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH',
-                timestamp: 'Sunday, August 28, 2022 1:53 AM'
-            },
-            {
-                user: 'Tsay Dmitriy',
-                message: '-_-',
-                timestamp: 'Sunday, August 28, 2022 1:54 AM'
-            },
-        ]
-    }
+const ChannelChat = ({channel, selectedChat, activeUser, messages, setMessages}) => {
 
     const formRef = React.useRef(null);
     const textareaRef = React.useRef(null);
     const chatMainRef = React.useRef(null);
 
     const [ input, setInput ] = React.useState('');
-    const [ chat, setChat ] = React.useState(channel.chat);
 
     const findUser = (userName) => {
         for (let i = 0; i < channel.users.length; i++) {
             if (channel.users[i].name === userName) {
-                return channel.users[i].image;
+                return channel.users[i].avatar;
             }
         }
     }
@@ -104,19 +29,19 @@ const ChannelChat = ({channel1}) => {
     const handleSubmit = (event) => {
         if (event.key === 'Enter') {
             event.preventDefault();
-            
+
             if (input) {
-                setChat((prevChat) => {
+                console.log(`submitted`);
+                setMessages((prevMessages) => {
                     return [
-                        ...prevChat,
+                        ...prevMessages,
                         {
-                            user: 'Tsay Dmitriy',
+                            user: activeUser.name,
                             message: input,
-                            timestamp: 'Recently'
+                            timestamp: 'Recently',
                         }
                     ]
-                });
-
+                })
                 setInput('');
             }
         }
@@ -147,14 +72,12 @@ const ChannelChat = ({channel1}) => {
             chatMainRef.current.style.height = `calc(100vh - 36px - 50px)`;
             chatMainRef.current.scrollTop = chatMainRef.current.scrollHeight;
         }
-
-        console.log(chatMainRef.current.style.height);
     },[input])
 
     // Hook for insta scroll down with new message
     React.useEffect(() => {
         chatMainRef.current.scrollTop = chatMainRef.current.scrollHeight;
-    }, [chat])
+    }, [messages])
 
   return (
     <div className='channel-chat'>
@@ -171,7 +94,7 @@ const ChannelChat = ({channel1}) => {
             </div>
         </div>
         <div className='channel-chat__main' ref={chatMainRef}>
-            {chat.map((message) => {
+            {messages?.map((message) => {
                 return (
                     <div className='message'>
                         <img 

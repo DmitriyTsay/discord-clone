@@ -8,19 +8,19 @@ import ChannelNav from '../components/channelpage/ChannelNav'
 import ChannelChat from '../components/channelpage/ChannelChat'
 
 
-const ChannelPage = () => {
+const ChannelPage = ({selectedChannel, selectChat, selectedChat, activeUser, messages, setMessages}) => {
   return (
     <div className='channel-page'>
       <div className='channel-page__first'>
-        <ChannelShortcut />
-        <ChannelNav />
-        <ProfileBar />
+        <ChannelShortcut channel={selectedChannel}/>
+        <ChannelNav channel={selectedChannel} selectChat={selectChat} selectedChat={selectedChat}/>
+        <ProfileBar channel={selectedChannel} activeUser={activeUser}/>
       </div>
       <div className='channel-page__second'>
-        <ChannelChat />
+        <ChannelChat channel={selectedChannel} selectedChat={selectedChat} activeUser={activeUser} messages={messages} setMessages={setMessages}/>
       </div>
       <div className='channel-page__third'>
-        <UsersSection />
+        <UsersSection channel={selectedChannel}/>
       </div>
     </div>
   )

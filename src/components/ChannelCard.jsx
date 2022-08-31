@@ -19,8 +19,8 @@ const ChannelCard = ({img, name, page, handleClick, selected}) => {
   }
 
   return (
-    <div className='channel-card' onClick={handleClick}>
-        <div className={`channel-card__img ${selected && 'selected'}`}>
+    <div className='channel-card'>
+        <div className={`channel-card__img ${selected && 'selected'}`} onClick={handleClick}>
             {img ? <img 
               src={img} 
               alt='channel' 

@@ -1,96 +1,11 @@
 import React from 'react'
 import UserBar from '../UserBar'
 
-const UsersSection = () => {
+const UsersSection = ({channel}) => {
 
     const [findInput, setFindInput] = React.useState('');
 
-    const users = [
-        {
-            name: 'Tsay Dmitriy',
-            image: 'https://thumbs.dreamstime.com/b/cute-cat-portrait-square-photo-beautiful-white-closeup-105311158.jpg',
-            online: true,
-            status: 'Working'
-        },
-        {
-            name: 'Bill Gates',
-            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmy4xLx6IpXyhloRDttTWPp8k_0ULF3uZMFoIpLsQBQg&s',
-            online: true,
-            status: 'Working'
-        },
-        {
-            name: 'Elon Musk',
-            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s',
-            online: false,
-            status: 'Chilling'
-        },
-        {
-            name: 'Elon Musk',
-            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s',
-            online: false,
-            status: 'Chilling'
-        },
-        {
-            name: 'Elon Musk',
-            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s',
-            online: false,
-            status: 'Chilling'
-        },
-        {
-            name: 'Elon Musk',
-            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s',
-            online: false,
-            status: 'Chilling'
-        },
-        {
-            name: 'Elon Musk',
-            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s',
-            online: false,
-            status: 'Chilling'
-        },
-        {
-            name: 'Elon Musk',
-            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s',
-            online: false,
-            status: 'Chilling'
-        },
-        {
-            name: 'Elon Musk',
-            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s',
-            online: false,
-            status: 'Chilling'
-        },
-        {
-            name: 'Elon Musk',
-            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s',
-            online: false,
-            status: 'Chilling'
-        },
-        {
-            name: 'Elon Musk',
-            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s',
-            online: false,
-            status: 'Chilling'
-        },
-        {
-            name: 'Elon Musk',
-            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s',
-            online: false,
-            status: 'Chilling'
-        },
-        {
-            name: 'Elon Musk',
-            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s',
-            online: false,
-            status: 'Chilling'
-        },
-        {
-            name: 'Elon Musk',
-            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsCIjp_jNXobV8zB79v5xRKMNlAHysXcOblQScU8BfQ&s',
-            online: false,
-            status: 'Chilling'
-        },
-    ]
+    const users = channel.users;
 
     const findUser = (event) => {
         setFindInput(event.target.value)
@@ -115,7 +30,7 @@ const UsersSection = () => {
                     return (
                     <UserBar 
                         name={user.name}
-                        image={user.image}
+                        image={user.avatar}
                         status={user.status}
                     />
                     )
@@ -129,7 +44,7 @@ const UsersSection = () => {
                     return (
                     <UserBar 
                         name={user.name}
-                        image={user.image}
+                        image={user.avatar}
                         status={user.status}
                     />
                     )
