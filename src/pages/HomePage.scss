@@ -1,0 +1,20 @@
+/* -----HOME PAGE__FIRST SECTION----- */
+
+.home-page__first {
+    display: flex;
+    flex-direction: column;
+
+    width: 250px;
+
+    overflow: hidden;
+}
+
+/* -----HOME PAGE__SECOND SECTION----- */
+
+.home-page__second {
+    width: calc(100vw - 75px - 250px);
+
+    background-color: var(--background-primary-color);
+    
+    color: white;
+}

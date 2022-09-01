@@ -32,6 +32,7 @@ const UsersSection = ({channel}) => {
                         name={user.name}
                         image={user.avatar}
                         status={user.status}
+                        online={user.online}
                     />
                     )
                 }
@@ -46,6 +47,7 @@ const UsersSection = ({channel}) => {
                         name={user.name}
                         image={user.avatar}
                         status={user.status}
+                        online={user.online}
                     />
                     )
                 }

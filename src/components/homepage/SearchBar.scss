@@ -1,0 +1,33 @@
+/* -----SEARCH BAR----- */
+
+.search-bar {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 65px;
+
+    padding: 0 10px;
+
+    background: var(--background-primary-color);
+
+    border-bottom: 1px solid rgb(25,25,25);
+    box-shadow: 0 1px 1px 0 rgb(25,25,25);
+
+    z-index: 1;
+
+    input {
+        background: var(--background-second-color);
+
+        color: var(--font-primary-color);
+
+        height: 50%;
+
+        padding: 0 10px;
+
+        border: none;
+        border-radius: 5px;
+
+        user-select: auto; 
+    }
+}

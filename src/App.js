@@ -15,6 +15,7 @@ const App = () => {
 
   const [ selectedChannel, setSelectedChannel ] = React.useState(data.channels[0]);
   const [ selectedChat, setSelectedChat ] = React.useState(null);
+  const [ selectedDialogue, setSelectedDialogue ] = React.useState('Friends');
   const [ activeUser, setActiveUser ] = React.useState(data.activeUser);
   const [ messages, setMessages ] = React.useState(null);
 
@@ -39,7 +40,14 @@ const App = () => {
       <HashRouter>
         <SideNav data={data} selectChannel={selectChannel} selectedChannel={selectedChannel}/>
         <Routes>
-          <Route exact path='/' element={<HomePage />} />
+          <Route 
+            exact path='/' 
+            element={
+              <HomePage 
+                friends={data.activeUser.friends}
+                selectedDialogue={selectedDialogue}
+              />} 
+          />
           <Route 
             exact path='/channel/' 
             element={

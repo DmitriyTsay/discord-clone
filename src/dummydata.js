@@ -23,8 +23,8 @@ export const data = {
                 {
                     name: 'Gabe Newell',
                     avatar: 'https://avatarfiles.alphacoders.com/193/193476.jpg',
-                    online: true,
-                    status: 'Working',
+                    online: false,
+                    status: 'Making HL3 (no)',
                 }
             ],
             textChats: [
@@ -213,5 +213,19 @@ export const data = {
         avatar: 'https://thumbs.dreamstime.com/b/cute-cat-portrait-square-photo-beautiful-white-closeup-105311158.jpg',
         online: true,
         status: 'Working',
+        friends: [
+            {
+                name: 'Hideo Kojima',
+                avatar: 'https://pbs.twimg.com/profile_images/914211724412166144/Bf2Yij9b_400x400.jpg',
+                online: true,
+                status: 'Working',
+            },
+            {
+                name: 'Gabe Newell',
+                avatar: 'https://avatarfiles.alphacoders.com/193/193476.jpg',
+                online: false,
+                status: 'Making HL3 (no)',
+            }
+        ]
     },
 }

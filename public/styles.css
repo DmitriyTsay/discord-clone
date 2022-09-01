@@ -7,6 +7,22 @@
     scroll-behavior: smooth;
 }
 
+:root {
+    --background-primary-color: #040d2a;
+    --background-second-color: #072743;
+    --background-chat-color: #175259;
+    --background-selected-color: #c1ccd7;
+
+    --border-first-color: black;
+
+    --font-primary-color: white;
+    --font-second-color: gray;
+
+    --font-header-size: 16px;
+    --font-primary-size: 14px;
+    --font-small-size: 12px;
+}
+
 body {
     width: 100%;
     background: #4e6f7b;
@@ -182,43 +198,6 @@ body {
     min-height: 600px;
 }
 
-/* -----HOME PAGE__FIRST SECTION----- */
-
-.home-page__first {
-    display: flex;
-    flex-direction: column;
-
-    width: 250px;
-
-    overflow: hidden;
-}
-
-/* -----SEARCH BAR----- */
-
-.search-bar {
-    display: flex;
-    align-items: center;
-
-    width: 250px;
-    height: 50px;
-
-    padding: 10px;
-
-    background: #072743;
-}
-
-/* -----MESSAGE SECTION----- */
-
-.message-section {
-    display: flex;
-
-    height: calc(100vh - 50px - 65px);
-
-    padding: 10px;
-
-    background: #072743;
-}
-
 /* -----PROFILE BAR----- */
 
 .profile-bar {
@@ -321,14 +300,6 @@ body {
     background: #c1ccd7;
 
     color: black;
-}
-
-/* -----HOME PAGE__SECOND SECTION----- */
-
-.home-page__second {
-    width: calc(100vw - 75px - 250px);
-
-    background-color: #072743;
 }
 
 /* -----CHANNEL PAGE----- */
@@ -575,7 +546,7 @@ body {
     
     position: relative;
 
-    background:  	#175259;
+    background: #175259;
 }
 
 
@@ -929,10 +900,15 @@ body {
 
 .users-section__header input {
 
+    background: var(--background-second-color);
+
+    color: var(--font-primary-color);
+
     width: 230px;
 
     padding: 1px 5px;
 
+    border: none;
     border-radius: 5px;
 
     transition: width 0.5s;
@@ -950,24 +926,6 @@ body {
 .users-section__category > p {
     margin-bottom: 5px;
     margin-left: 15px;
-}
-
-/* -----USER BAR----- */
-
-.user-bar {
-    display: flex;
-    align-items: center;
-
-    width: 220px;
-    
-    margin: 0 auto;
-    padding: 10px;
-
-    height: 50px;
-
-    border-radius: 10px;
-
-    background: #072743;
 }
 
 @media screen and (max-width: 1000px) {
@@ -1003,52 +961,4 @@ body {
     }
 }
 
-.user-bar:hover {
-    background: #c1ccd7;
-}
 
-.user-bar:hover .user-bar__credentials {
-    color: black;
-}
-
-/* -----USER BAR__CREDENTIALS----- */
-
-.user-bar__credentials {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
-
-    border-radius: 5px;
-
-    cursor: pointer;
-
-    align-items: center;
-
-    color: white;
-}
-
-.user-bar__credentials p {
-    font-size: 14px;
-}
-
-.user-bar__credentials__image {
-    width: 40px; 
-    height: 40px;
-
-    grid-row: 1/3;
-
-    overflow: hidden;
-
-    border-radius: 50%;
-
-    margin-right: 10px;
-}
-
-.user-bar__credentials__image img {
-    width: 40px;
-    height: 40px;
-}
-
-.status {
-    margin-top: -5px !important;
-}
